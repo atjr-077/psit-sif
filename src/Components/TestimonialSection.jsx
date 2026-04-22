@@ -46,22 +46,22 @@ const TestimonialSection = () => {
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex items-start space-x-6 rounded-lg shadow-lg p-6 hover:shadow-xl 
-                     bg-gradient-to-r from-green-50 to-green-100 via-green-50 
+            className="flex flex-col items-center text-center rounded-lg shadow-lg p-8 hover:shadow-xl 
+                     bg-gradient-to-b from-green-50 to-white
                      transform hover:-translate-y-1 duration-200"
           >
-            <div className="w-40 h-48 flex-shrink-0">
+            <div className="w-40 h-48 mb-6 overflow-hidden rounded-lg shadow-md border-2 border-green-200">
               <img
                 src={testimonial.imageSrc}
                 alt={testimonial.name}
-                className="w-full h-full object-cover shadow-md"
+                className="w-full h-full object-cover"
               />
             </div>
 
             <div className="flex-1">
-              <p className="text-gray-600 mb-4 italic">"{testimonial.comment}"</p>
-              <h3 className="font-semibold text-xl text-gray-800 mb-1">{testimonial.name}</h3>
-              <p className="text-gray-500">{testimonial.role}</p>
+              <p className="text-gray-600 mb-6 italic text-lg leading-relaxed">"{testimonial.comment}"</p>
+              <h3 className="font-bold text-2xl text-gray-800 mb-2">{testimonial.name}</h3>
+              <p className="text-green-600 font-medium uppercase tracking-wider text-sm">{testimonial.role}</p>
             </div>
           </div>
         ))}

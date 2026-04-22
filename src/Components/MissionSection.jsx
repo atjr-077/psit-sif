@@ -6,9 +6,15 @@ import expo2 from "../assets/banner/expo2.jpg";
 import gokart from "../assets/banner/gokart.jpg";
 import incub from "../assets/banner/incub.jpg";
 import room from "../assets/banner/room.jpg";
+import lobby from "../assets/banner/lobby.jpg";
 
 const MissionSection = () => {
   const slides = [
+    {
+      image: lobby,
+      title: "Welcome to PSIT Startup and Incubation Foundation",
+      description: "State-of-the-art infrastructure designed to foster innovation, collaboration, and entrepreneurial excellence."
+    },
     {
       image: audi,
       title: "Empowering Innovation and Entrepreneurship",
@@ -39,7 +45,7 @@ const MissionSection = () => {
       title: "Driving Innovation and Engineering Excellence",
       description: "Encouraging hands-on learning and technological innovation through competitive engineering challenges."
     }
-  ];  
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -106,16 +112,16 @@ const MissionSection = () => {
           transition={{ duration: 0.4 }}
           className="absolute w-full h-full"
         >
-          <img 
-            src={slides[currentIndex].image} 
+          <img
+            src={slides[currentIndex].image}
             className="absolute inset-0 w-full h-full object-cover"
             alt={slides[currentIndex].title}
           />
-          
+
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
-          
+
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between">
-            <button 
+            <button
               className="btn btn-circle bg-white/30 hover:bg-white/50 transition-colors duration-200"
               onClick={prevSlide}
             >
@@ -123,7 +129,7 @@ const MissionSection = () => {
                 <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <button 
+            <button
               className="btn btn-circle bg-white/30 hover:bg-white/50 transition-colors duration-200"
               onClick={nextSlide}
             >
@@ -132,16 +138,16 @@ const MissionSection = () => {
               </svg>
             </button>
           </div>
-          
-          <motion.div 
-            className="absolute bottom-0 left-0 right-0 p-6"
+
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 p-6 text-center"
             variants={textVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
-            <h2 className="text-2xl font-bold text-white mb-2">{slides[currentIndex].title}</h2>
-            <p className="text-white/90">{slides[currentIndex].description}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{slides[currentIndex].title}</h2>
+            <p className="text-white/90 text-base sm:text-lg">{slides[currentIndex].description}</p>
           </motion.div>
         </motion.div>
       </AnimatePresence>

@@ -25,7 +25,7 @@ const ThrustAreas = () => {
             {thrustAreas.map((area, index) => (
                 <div key={index} className="flex-shrink-0 w-80 bg-white rounded-lg shadow-md overflow-hidden">
                 <img src={area.image} alt={area.title} className="w-full h-48 object-cover" />
-                <div className="p-4">
+                <div className="p-4 text-center">
                     <h3 className="text-lg font-semibold text-gray-900">{area.title}</h3>
                     <p className="text-sm text-gray-600 mt-2">{area.description}</p>
                 </div>

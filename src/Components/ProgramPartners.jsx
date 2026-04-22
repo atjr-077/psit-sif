@@ -83,43 +83,31 @@ const ProgramPartners = () => {
             {strategicPartners.map((program, index) => (
               <div 
                 key={index} 
-                className="flex items-center space-x-6 group"
+                className="flex flex-col items-center text-center group bg-white p-8 rounded-2xl shadow-md"
               >
-                <div className="w-1/3 relative">
+                <div className="w-48 h-32 relative mb-6">
                   <img 
                     src={program.image}
                     alt={program.title}
-                    className="w-full h-40 object-cover rounded-lg grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                   />
                 </div>
-                <div className="w-2/3 space-y-4">
-                  <h3 className="text-2xl font-semibold text-gray-900 group-hover:text-green-600 transition-colors">
+                <div className="space-y-4">
+                  <h3 className="text-3xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
                     {program.title}
                   </h3>
                   
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-lg">
                     {program.description}
                   </p>
                   
-                  <ul className="space-y-2">
+                  <ul className="flex flex-col items-center space-y-2 pt-4">
                     {program.benefits.map((benefit, benefitIndex) => (
                       <li 
                         key={benefitIndex}
-                        className="flex items-center text-gray-700 text-sm"
+                        className="flex items-center text-gray-700 font-medium"
                       >
-                        <svg 
-                          className="w-5 h-5 mr-2 text-blue-500" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            strokeWidth={2} 
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
-                          />
-                        </svg>
+                        <div className="w-1.5 h-1.5 rounded-full bg-green-500 mr-3" />
                         {benefit}
                       </li>
                     ))}

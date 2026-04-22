@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Target, Lightbulb, Users, BadgeDollarSign } from 'lucide-react';
-import img from "../assets/name.jpg";
+import img from "../assets/itbi-poster.jpg";
 import img2 from "../assets/th.png";
 import img5 from "../assets/banner.jpg";
 
@@ -26,22 +26,22 @@ const MiddleSection = () => {
           {/* Left Content Section */}
           <div className="flex-1 space-y-8">
             {/* Header Section */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h1 className="text-4xl font-bold mb-4 text-gray-900 inline-block bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
+            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+              <h1 className="text-4xl font-bold mb-6 text-gray-900 inline-block bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
                 i-TBI Program
               </h1>
-              
+
               {/* Highlights Grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 {highlights.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-blue-50 p-3 rounded-lg text-green-700">
+                  <div key={index} className="flex flex-col items-center justify-center gap-2 bg-blue-50 p-3 rounded-lg text-green-700">
                     {item.icon}
-                    <span className="text-sm font-medium">{item.text}</span>
+                    <span className="text-sm font-medium text-center">{item.text}</span>
                   </div>
                 ))}
               </div>
 
-              <p className="text-gray-600 text-md leading-relaxed font-semibold">
+              <p className="text-gray-600 text-md leading-relaxed font-semibold text-center mt-6">
                 Inclusive TBI is a three years duration initiative supported by the Department of Science & Technology (DST) for educational institutions who are likely to foster innovation and entrepreneurship culture among the students, faculties, entrepreneurs, and nearby communities. It is expected that students, innovators and entrepreneurs will take up innovative ideas/projects and with mentoring support from the academicand startup ecosystem and try to build a startup around the innovative idea/project.The outcome of the i-TBI shall be converting ideas into startups. i-TBI (Inclusive TBI)would also create a culture of innovation & entrepreneurship in the Host Institution (HI)and nearby geographies. i-TBI will be equipped with grants-in-aid funding support to innovators to convert ideas to prototype and prototype to product.
               </p>
             </div>
@@ -64,12 +64,12 @@ const MiddleSection = () => {
                 </div>
                 {expandedSection === 'criteria' && (
                   <div className="px-6 pb-6">
-                    <div className="bg-green-50 p-4 rounded-lg text-gray-700">
-                    Individual Innovators or Startups: Open to students, entrepreneurs, and innovators with innovative ideas or prototypes.
-Stage of Idea: Should have a well-defined idea or an early-stage prototype with potential for commercialization.
-Focus Areas: Ideas should align with societal, technological, or economic challenges and have scalable potential.
-Commitment: Applicants must commit to using the i-TBI facilities and mentorship to develop their idea into a startup or product.
-Inclusion: Priority may be given to underrepresented groups or regions lacking innovation ecosystems.
+                    <div className="bg-green-50 p-4 rounded-lg text-gray-700 text-center">
+                      <p>Individual Innovators or Startups: Open to students, entrepreneurs, and innovators with innovative ideas or prototypes.</p>
+                      <p>Stage of Idea: Should have a well-defined idea or an early-stage prototype with potential for commercialization.</p>
+                      <p>Focus Areas: Ideas should align with societal, technological, or economic challenges and have scalable potential.</p>
+                      <p>Commitment: Applicants must commit to using the i-TBI facilities and mentorship to develop their idea into a startup or product.</p>
+                      <p>Inclusion: Priority may be given to underrepresented groups or regions lacking innovation ecosystems.</p>
                       <a href="#" className="text-green-600 hover:underline block mt-2">
                         Learn more →
                       </a>
@@ -94,15 +94,17 @@ Inclusion: Priority may be given to underrepresented groups or regions lacking i
                 </div>
                 {expandedSection === 'testPapers' && (
                   <div className="px-6 pb-6">
-                    <div className="bg-green-50 p-4 rounded-lg text-gray-700">
-               <h1 className='font-bold'>Vision</h1> 
-To foster a culture of innovation and entrepreneurship by transforming novel ideas into scalable startups, empowering individuals and communities to contribute to India's socio-economic growth.
-<h1 className='font-bold'> Target   </h1>
-- Idea to Startup Conversion: Enable innovators to transform ideas into sustainable startups.  <br/>
-- Ecosystem Development: Establish a robust innovation and entrepreneurship ecosystem within the host institution and nearby regions.<br/>
-- Inclusivity: Support innovators from diverse backgrounds, ensuring equitable opportunities for all.  <br/>
-- Prototype to Product: Facilitate the journey from prototype development to market-ready products through funding and mentorship.  <br/>
-- Capacity Building: Enhance the entrepreneurial capabilities of students, faculties, and local communities.  
+                    <div className="bg-green-50 p-4 rounded-lg text-gray-700 text-center">
+                      <h1 className='font-bold mb-2'>Vision</h1>
+                      <p className="mb-4">To foster a culture of innovation and entrepreneurship by transforming novel ideas into scalable startups, empowering individuals and communities to contribute to India's socio-economic growth.</p>
+                      <h1 className='font-bold mb-2'>Target</h1>
+                      <div className="space-y-1">
+                        <p>- Idea to Startup Conversion: Enable innovators to transform ideas into sustainable startups.</p>
+                        <p>- Ecosystem Development: Establish a robust innovation and entrepreneurship ecosystem within the host institution and nearby regions.</p>
+                        <p>- Inclusivity: Support innovators from diverse backgrounds, ensuring equitable opportunities for all.</p>
+                        <p>- Prototype to Product: Facilitate the journey from prototype development to market-ready products through funding and mentorship.</p>
+                        <p>- Capacity Building: Enhance the entrepreneurial capabilities of students, faculties, and local communities.</p>
+                      </div>
                       <a href="#" className="text-green-600 hover:underline block mt-2">
                         Learn more →
                       </a>
@@ -127,7 +129,7 @@ To foster a culture of innovation and entrepreneurship by transforming novel ide
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  
+
                   <div className="text-center">
                     <h3 className="text-xl font-semibold mb-2">Start Your Journey</h3>
                     <p className="text-amber-100 text-sm">Join the innovation ecosystem and transform your ideas into reality</p>
