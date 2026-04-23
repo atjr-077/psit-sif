@@ -21,6 +21,7 @@ import shaktiLogo from '../assets/logos/shakti.png';
 import wyvateLogo from '../assets/logos/wyvate.png';
 import eywLogo from '../assets/logos/eyw.png';
 import fluxLogo from '../assets/logos/flux.png';
+import avyuktLogo from '../assets/logos/avyukt.png';
 
 
 const startupData = [
@@ -39,7 +40,7 @@ const startupData = [
   { name: "Shakti Wearables", founders: "Srishti Sharma", industry: "Deep Tech / IoT", stage: "Development", website: "shaktiwearables.com", logo: shaktiLogo },
   { name: "EPR Recyclers", founders: "Kohima Dhandhania", industry: "Sustainability", stage: "Scaling", website: "eprrecycler.com", logo: eywLogo },
   { name: "Srishti Sharma LLP", founders: "Srishti Sharma", industry: "Deep Tech / IoT", stage: "Development", website: "shaktiwearables.com", logo: shaktiLogo },
-  { name: "Avyukt Core Technology", founders: "Anshuman Singh / Shreya Mishra / Anuj Shukla", industry: "IT", stage: "Scaling", website: "avyuktcoretechnologies.com" },
+  { name: "Avyukt Core Technology", founders: "Anshuman Singh / Shreya Mishra / Anuj Shukla", industry: "IT", stage: "Scaling", website: "avyuktcoretechnologies.com", logo: avyuktLogo },
   { name: "Nutty Village (Freshily19)", founders: "Aman Kumar", industry: "Agri-Tech / Food", stage: "Early Revenue", website: "" },
   { name: "VN Organics", founders: "Nisha Niranjan", industry: "Food & Beverages", stage: "MVP", website: "" },
   { name: "100service (Homivo)", founders: "Harsh Katiyar", industry: "Home Services", stage: "Early Revenue", website: "100service.in" },
