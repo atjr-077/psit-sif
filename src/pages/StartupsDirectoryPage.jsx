@@ -27,6 +27,11 @@ import vnorganicsLogo from '../assets/logos/vnorganics.png';
 import service100Logo from '../assets/logos/100service.png';
 import edubukLogo from '../assets/logos/edubuk.jpg';
 import cleanvitalsLogo from '../assets/logos/cleanvitals.png';
+import greenarriveLogo from '../assets/logos/greenarrive.png';
+import tepiaiLogo from '../assets/logos/tepiai.jpg';
+import adasLogo from '../assets/logos/adas.png';
+import rassLogo from '../assets/logos/rass.png';
+import exhibyLogo from '../assets/logos/exhiby.png';
 
 
 const startupData = [
@@ -54,18 +59,18 @@ const startupData = [
   { name: "Saat Phere", founders: "Manoj Kumar", industry: "Wedding & Events, AI", stage: "Early Revenue", website: "saat-phere.in" },
   { name: "Clean Vitals (Dassonz)", founders: "Dr. Soumyakant Das", industry: "Food & Health Tech", stage: "Early Revenue", website: "cleanvitals.com", logo: cleanvitalsLogo },
   { name: "Campus Haat", founders: "Guddu Kumar", industry: "FoodTech", stage: "Early Revenue", website: "campushaat.com" },
-  { name: "GreenArrive", founders: "Shubham Gupta / Sachin Sengar", industry: "Agritech", stage: "Early Revenue", website: "" },
-  { name: "Tepi AI", founders: "Akshita Bhardwaj", industry: "Education, AI", stage: "Ideation", website: "tepiai.com" },
+  { name: "GreenArrive", founders: "Shubham Gupta / Sachin Sengar", industry: "Agritech", stage: "Early Revenue", website: "", logo: greenarriveLogo },
+  { name: "Tepi AI", founders: "Akshita Bhardwaj", industry: "Education, AI", stage: "Ideation", website: "tepiai.com", logo: tepiaiLogo },
   { name: "Raman Research & Innovation", founders: "Lavitra Sahu", industry: "Robotics / IoT", stage: "Ideation", website: "wegyanik.in" },
-  { name: "ADAS Power Solutions", founders: "Dhruv Agarwal", industry: "Technology Hardware", stage: "Prototyping", website: "" },
+  { name: "ADAS Power Solutions", founders: "Dhruv Agarwal", industry: "Technology Hardware", stage: "Prototyping", website: "", logo: adasLogo },
   { name: "RaySync Innovation", founders: "Gaurav Tiwari", industry: "IoT", stage: "Ideation", website: "raysyncinnovation.in" },
   { name: "Tackle Studioz", founders: "Aryan Bajpai", industry: "IT Services", stage: "—", website: "tacklestudioz.com" },
   { name: "Arixolve Ventures", founders: "Anmol Mishra", industry: "IT Services", stage: "—", website: "" },
-  { name: "RASS Neuro Dynamics", founders: "Sparsh Verma", industry: "IoT / Automation", stage: "Early Traction", website: "" },
+  { name: "RASS Neuro Dynamics", founders: "Sparsh Verma", industry: "IoT / Automation", stage: "Early Traction", website: "", logo: rassLogo },
   { name: "VOIKES Technologies", founders: "Ananvay Pandey", industry: "Human-Centric / Med-Tech", stage: "—", website: "voikes.framer.website" },
   { name: "Trinova Innovation", founders: "Akash Sahu", industry: "IoT Technology", stage: "—", website: "" },
   { name: "Aarush Eco Tech", founders: "Dr. Amit Singh Chauhan", industry: "AI/ML", stage: "—", website: "ecotech.co.in" },
-  { name: "Thinktechno / Adflix", founders: "Ms. Anannya Sharma", industry: "AI/ML", stage: "—", website: "exhiby.in" },
+  { name: "Thinktechno / Adflix", founders: "Ms. Anannya Sharma", industry: "AI/ML", stage: "—", website: "exhiby.in", logo: exhibyLogo },
   { name: "Fibra Clothing", founders: "Yogesh Singh", industry: "Textile & Apparel", stage: "—", website: "" },
   { name: "Edufutura", founders: "Nishant Dixit", industry: "IT Services", stage: "—", website: "" },
   { name: "Kanpur Aero Modelling Club", founders: "Aditya Kumar Kushwaha", industry: "Education Technology", stage: "—", website: "" },
