@@ -22,8 +22,8 @@ const MissionSection = () => {
     },
     {
       image: expo,
-      title: "Igniting Entrepreneurial Mindsets",
-      description: "Providing aspiring entrepreneurs with essential guidance, strategies, and support to build successful ventures."
+      title: "Empowering Next-Gen Innovators",
+      description: "Bringing together bright minds to share ideas and shape the future of technology and entrepreneurship."
     },
     {
       image: incub,
@@ -140,7 +140,7 @@ const MissionSection = () => {
           </div>
 
           <motion.div
-            className="absolute bottom-0 left-0 right-0 p-6 text-center"
+            className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center"
             variants={textVariants}
             initial="hidden"
             animate="visible"

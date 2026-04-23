@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import EventsPage from './pages/EventsPage';
-import BenifitedStartupPage from './pages/BenifitedStartupPage';
+import BenifitedStartupPage from './pages/StartupsDirectoryPage';
 import AboutUs from './pages/AboutUs';
 
 

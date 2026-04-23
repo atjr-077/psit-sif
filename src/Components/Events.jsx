@@ -10,7 +10,7 @@ import img6 from "../assets/events/startup2.jpg"
 import img7 from "../assets/events/IPR2.jpeg"
 
 // New event photos
-import elevate26 from "../assets/events/elevate26.png"
+import elevate26 from "../assets/banner/audi.jpg"
 import drone from "../assets/events/drone.jpg"
 import presentation from "../assets/events/presentation.jpg"
 
@@ -35,8 +35,8 @@ const FeaturedEventCard = ({ event }) => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
         {/* Content container - Better padding for mobile */}
-        <div className="lg:w-1/2 p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-green-100 to-green-50">
-          <div className="mb-4 lg:mb-6 text-center lg:text-left">
+        <div className="lg:w-1/2 p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-green-100 to-green-50 flex flex-col justify-center items-center text-center">
+          <div className="mb-4 lg:mb-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4 group-hover:text-green-700 transition-colors">
               {event.title}
             </h2>
@@ -44,7 +44,7 @@ const FeaturedEventCard = ({ event }) => {
               {event.description}
             </p>
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-center">
             <a
               href={event.url}
               className="inline-flex items-center px-6 sm:px-8 py-2 sm:py-3 bg-green-600 text-white rounded-lg 
@@ -105,7 +105,7 @@ const Event = () => {
   const events = [
     {
       image: img1,
-      title: 'StartUp Chacha 3.0',
+      title: 'StartUp Charcha 3.0',
       description: 'STARTUP CHARCHA 3.0, an exclusive talk show with Mr. Nitin Sharma, Founder of ROAD PILOT, as our esteemed chief guest. The engaging session sparked meaningful conversations and ignited entrepreneurial spirits. The event witnessed an overwhelming response from students, who benefited from Mr. Sharma valuable insights on entrepreneurship and innovation. We extend our gratitude to Mr. Sharma for sharing his expertise and inspiring the next generation of leaders.',
       url: '#'
     },
@@ -167,8 +167,8 @@ const Event = () => {
                   alt={showcaseImages[currentSlide].title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
-                  <div className="p-6 sm:p-10 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-center justify-center">
+                  <div className="p-6 sm:p-10 text-white text-center">
                     <motion.h3 
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
