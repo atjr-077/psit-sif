@@ -3,7 +3,7 @@ import img from "../../assets/laww.jpg";
 import sandeep from "../../assets/team/sandeep.jpeg";
 import anurag from "../../assets/team/anurag.jpeg";
 import vijay from "../../assets/team/vijay.jpeg";
-import rajat from '../../assets/team/rajat sir.jpg';
+import rajat from '../../assets/team/rajat_verma.jpg';
 
 function Team() {
   const teamMembers = [
