@@ -7,22 +7,38 @@ import {
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
+// Logo Imports
+import senseoriginalLogo from '../assets/logos/senseoriginal.png';
+import ochaatLogo from '../assets/logos/ochaat.png';
+import kckmLogo from '../assets/logos/KCKM.png';
+import bayLogo from '../assets/logos/bay.png';
+import strinityLogo from '../assets/logos/strinity.png';
+import samochaLogo from '../assets/logos/smoocha.png';
+import dualiteLogo from '../assets/logos/dualite.png';
+import bharatoneLogo from '../assets/logos/bharatonecare.png';
+import kojoLogo from '../assets/logos/kojo.png';
+import shaktiLogo from '../assets/logos/shakti.png';
+import wyvateLogo from '../assets/logos/wyvate.png';
+import eywLogo from '../assets/logos/eyw.png';
+import fluxLogo from '../assets/logos/flux.png';
+
+
 const startupData = [
-  { name: "Senseoriginal Technologies", founders: "Mohammed Saalim / Harshit Goel", industry: "IoT, SaaS & Deeptech", stage: "Early Revenue", website: "senseoriginal.com", logo: "C:\Users\tiwar\Downloads\WhatsApp Image 2026-04-22 at 14.00.45.jpeg" },
-  { name: "Ochaat Pvt Ltd", founders: "Somnath Das / Dr Manish Kumar", industry: "Finance & Electronics", stage: "Pre-seed", website: "ochaat.in" },
-  { name: "KCKM Pvt Ltd", founders: "Somnath Das / Dr Manish Kumar", industry: "Electronics", stage: "Pre-seed", website: "" },
-  { name: "Good Ferment Beverages", founders: "Yash Raj Bhatia", industry: "Food Technology", stage: "Pre-Seed", website: "baykombucha.com" },
-  { name: "Strinity Automation", founders: "Nishant Pal", industry: "Tech-Furniture", stage: "Development", website: "strinityautomation.in" },
-  { name: "Samocha", founders: "Shivendra Gupta", industry: "Food & Beverage", stage: "Growth/Scale", website: "samocha.co" },
-  { name: "Dualite Technology", founders: "Prakhar Tandon", industry: "SaaS", stage: "Development", website: "dualite.dev" },
-  { name: "BharatOne Care", founders: "Naman Agarwal", industry: "Healthcare", stage: "Pre-Seed", website: "bharatonecare.com" },
-  { name: "FluxVisio Dynamics", founders: "Shreyansh Shukla / Ishita Chaturvedi", industry: "AI, Fintech", stage: "Pre-seed", website: "" },
+  { name: "Senseoriginal Technologies", founders: "Mohammed Saalim / Harshit Goel", industry: "IoT, SaaS & Deeptech", stage: "Early Revenue", website: "senseoriginal.com", logo: senseoriginalLogo },
+  { name: "Ochaat Pvt Ltd", founders: "Somnath Das / Dr Manish Kumar", industry: "Finance & Electronics", stage: "Pre-seed", website: "ochaat.in", logo: ochaatLogo },
+  { name: "KCKM Pvt Ltd", founders: "Somnath Das / Dr Manish Kumar", industry: "Electronics", stage: "Pre-seed", website: "", logo: kckmLogo },
+  { name: "Good Ferment Beverages", founders: "Yash Raj Bhatia", industry: "Food Technology", stage: "Pre-Seed", website: "baykombucha.com", logo: bayLogo },
+  { name: "Strinity Automation", founders: "Nishant Pal", industry: "Tech-Furniture", stage: "Development", website: "strinityautomation.in", logo: strinityLogo },
+  { name: "Samocha", founders: "Shivendra Gupta", industry: "Food & Beverage", stage: "Growth/Scale", website: "samocha.co", logo: samochaLogo },
+  { name: "Dualite Technology", founders: "Prakhar Tandon", industry: "SaaS", stage: "Development", website: "dualite.dev", logo: dualiteLogo },
+  { name: "BharatOne Care", founders: "Naman Agarwal", industry: "Healthcare", stage: "Pre-Seed", website: "bharatonecare.com", logo: bharatoneLogo },
+  { name: "FluxVisio Dynamics", founders: "Shreyansh Shukla / Ishita Chaturvedi", industry: "AI, Fintech", stage: "Pre-seed", website: "", logo: fluxLogo },
   { name: "Soulo LLP", founders: "Arpan Shukla / Shriyaansh Shukla", industry: "AI, IoT, Sustainability", stage: "Development", website: "soulo.co.in" },
-  { name: "Wyvate Tech", founders: "Sanchit Gupta", industry: "SaaS/Enterprise Software", stage: "Development", website: "wyvate.com" },
-  { name: "Greenhale Wellness (Kojo Life)", founders: "Akash Sagar", industry: "Personal Care", stage: "Growth/Scale", website: "kojolife.com" },
-  { name: "Shakti Wearables", founders: "Srishti Sharma", industry: "Deep Tech / IoT", stage: "Development", website: "shaktiwearables.com" },
-  { name: "EPR Recyclers", founders: "Kohima Dhandhania", industry: "Sustainability", stage: "Scaling", website: "eprrecycler.com" },
-  { name: "Srishti Sharma LLP", founders: "Srishti Sharma", industry: "Deep Tech / IoT", stage: "Development", website: "shaktiwearables.com" },
+  { name: "Wyvate Tech", founders: "Sanchit Gupta", industry: "SaaS/Enterprise Software", stage: "Development", website: "wyvate.com", logo: wyvateLogo },
+  { name: "Greenhale Wellness (Kojo Life)", founders: "Akash Sagar", industry: "Personal Care", stage: "Growth/Scale", website: "kojolife.com", logo: kojoLogo },
+  { name: "Shakti Wearables", founders: "Srishti Sharma", industry: "Deep Tech / IoT", stage: "Development", website: "shaktiwearables.com", logo: shaktiLogo },
+  { name: "EPR Recyclers", founders: "Kohima Dhandhania", industry: "Sustainability", stage: "Scaling", website: "eprrecycler.com", logo: eywLogo },
+  { name: "Srishti Sharma LLP", founders: "Srishti Sharma", industry: "Deep Tech / IoT", stage: "Development", website: "shaktiwearables.com", logo: shaktiLogo },
   { name: "Avyukt Core Technology", founders: "Anshuman Singh / Shreya Mishra / Anuj Shukla", industry: "IT", stage: "Scaling", website: "avyuktcoretechnologies.com" },
   { name: "Nutty Village (Freshily19)", founders: "Aman Kumar", industry: "Agri-Tech / Food", stage: "Early Revenue", website: "" },
   { name: "VN Organics", founders: "Nisha Niranjan", industry: "Food & Beverages", stage: "MVP", website: "" },
@@ -212,8 +228,12 @@ const StartupCard = ({ startup, viewMode }) => {
     >
       <div className={`${isGrid ? 'p-6 flex-grow' : 'flex-grow px-4'}`}>
         <div className="flex justify-between items-start mb-4">
-          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 flex items-center justify-center text-green-600 group-hover:from-green-600 group-hover:to-emerald-600 group-hover:text-white transition-all duration-300 ${isGrid ? '' : 'flex-shrink-0 mr-4'}`}>
-            <Rocket className="w-6 h-6" />
+          <div className={`w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 flex items-center justify-center text-green-600 group-hover:from-green-600 group-hover:to-emerald-600 group-hover:text-white transition-all duration-300 ${isGrid ? '' : 'flex-shrink-0 mr-4'}`}>
+            {startup.logo ? (
+              <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain p-1" />
+            ) : (
+              <Rocket className="w-6 h-6" />
+            )}
           </div>
           {startup.website && (
             <a
@@ -245,10 +265,10 @@ const StartupCard = ({ startup, viewMode }) => {
 
             <div className="flex items-center text-xs">
               <span className={`px-2 py-1 rounded-full font-bold uppercase tracking-wider ${startup.stage === 'Early Revenue' || startup.stage === 'Scaling' || startup.stage === 'Growth/Scale'
-                  ? 'bg-blue-50 text-blue-600'
-                  : startup.stage === 'Pre-seed' || startup.stage === 'Pre-Seed'
-                    ? 'bg-amber-50 text-amber-600'
-                    : 'bg-gray-100 text-gray-600'
+                ? 'bg-blue-50 text-blue-600'
+                : startup.stage === 'Pre-seed' || startup.stage === 'Pre-Seed'
+                  ? 'bg-amber-50 text-amber-600'
+                  : 'bg-gray-100 text-gray-600'
                 }`}>
                 {startup.stage === '—' ? 'Undisclosed' : startup.stage}
               </span>
