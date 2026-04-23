@@ -286,13 +286,7 @@ const StartupCard = ({ startup, viewMode }) => {
         </div>
       </div>
 
-      {isGrid && (
-        <div className="px-6 py-4 bg-gray-50/50 border-t border-gray-100 rounded-b-2xl group-hover:bg-green-50/30 transition-colors">
-          <button className="w-full flex items-center justify-center text-sm font-bold text-gray-600 hover:text-green-600 transition-colors">
-            View Details <ChevronRight className="w-4 h-4 ml-1" />
-          </button>
-        </div>
-      )}
+
     </motion.div>
   );
 };
