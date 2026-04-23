@@ -22,6 +22,11 @@ import wyvateLogo from '../assets/logos/wyvate.png';
 import eywLogo from '../assets/logos/eyw.png';
 import fluxLogo from '../assets/logos/flux.png';
 import avyuktLogo from '../assets/logos/avyukt.png';
+import nuttyLogo from '../assets/logos/nutty.png';
+import vnorganicsLogo from '../assets/logos/vnorganics.png';
+import service100Logo from '../assets/logos/100service.png';
+import edubukLogo from '../assets/logos/edubuk.jpg';
+import cleanvitalsLogo from '../assets/logos/cleanvitals.png';
 
 
 const startupData = [
@@ -41,13 +46,13 @@ const startupData = [
   { name: "EPR Recyclers", founders: "Kohima Dhandhania", industry: "Sustainability", stage: "Scaling", website: "eprrecycler.com", logo: eywLogo },
   { name: "Srishti Sharma LLP", founders: "Srishti Sharma", industry: "Deep Tech / IoT", stage: "Development", website: "shaktiwearables.com", logo: shaktiLogo },
   { name: "Avyukt Core Technology", founders: "Anshuman Singh / Shreya Mishra / Anuj Shukla", industry: "IT", stage: "Scaling", website: "avyuktcoretechnologies.com", logo: avyuktLogo },
-  { name: "Nutty Village (Freshily19)", founders: "Aman Kumar", industry: "Agri-Tech / Food", stage: "Early Revenue", website: "" },
-  { name: "VN Organics", founders: "Nisha Niranjan", industry: "Food & Beverages", stage: "MVP", website: "" },
-  { name: "100service (Homivo)", founders: "Harsh Katiyar", industry: "Home Services", stage: "Early Revenue", website: "100service.in" },
-  { name: "Edubuk Technologies", founders: "Shivani Mehrotra", industry: "Education, Blockchain, AI", stage: "Early Revenue", website: "edubuk.io" },
+  { name: "Nutty Village (Freshily19)", founders: "Aman Kumar", industry: "Agri-Tech / Food", stage: "Early Revenue", website: "", logo: nuttyLogo },
+  { name: "VN Organics", founders: "Nisha Niranjan", industry: "Food & Beverages", stage: "MVP", website: "", logo: vnorganicsLogo },
+  { name: "100service (Homivo)", founders: "Harsh Katiyar", industry: "Home Services", stage: "Early Revenue", website: "100service.in", logo: service100Logo },
+  { name: "Edubuk Technologies", founders: "Shivani Mehrotra", industry: "Education, Blockchain, AI", stage: "Early Revenue", website: "edubuk.io", logo: edubukLogo },
   { name: "Samrupa Tech LLP", founders: "Samar Choudhury", industry: "Automobile, Sustainability", stage: "Prototyping", website: "samrupa.com" },
   { name: "Saat Phere", founders: "Manoj Kumar", industry: "Wedding & Events, AI", stage: "Early Revenue", website: "saat-phere.in" },
-  { name: "Clean Vitals (Dassonz)", founders: "Dr. Soumyakant Das", industry: "Food & Health Tech", stage: "Early Revenue", website: "cleanvitals.com" },
+  { name: "Clean Vitals (Dassonz)", founders: "Dr. Soumyakant Das", industry: "Food & Health Tech", stage: "Early Revenue", website: "cleanvitals.com", logo: cleanvitalsLogo },
   { name: "Campus Haat", founders: "Guddu Kumar", industry: "FoodTech", stage: "Early Revenue", website: "campushaat.com" },
   { name: "GreenArrive", founders: "Shubham Gupta / Sachin Sengar", industry: "Agritech", stage: "Early Revenue", website: "" },
   { name: "Tepi AI", founders: "Akshita Bhardwaj", industry: "Education, AI", stage: "Ideation", website: "tepiai.com" },
