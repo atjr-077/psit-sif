@@ -10,13 +10,13 @@ export const Card = React.memo(({ card, index, hovered, setHovered }) => (
     className={cn(
       "rounded-lg relative bg-white overflow-hidden transition-all duration-300 ease-out",
       hovered !== null && hovered !== index && "blur-sm scale-[0.98]",
-      "w-[20v 0px] h-[200px]" 
+      "w-full h-40 md:h-48" 
     )}
   >
     <img
       src={card.src}
       alt={card.title}
-      className="object-cover w-full h-full" 
+      className="w-full h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110 p-2"
     />
     <div
       className={cn(

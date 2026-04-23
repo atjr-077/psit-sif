@@ -28,7 +28,7 @@ const Companies = () => {
           <img
             src={logo}
             alt={`Logo ${index + 1}`}
-            className="w-40 h-40 object-contain transition-transform duration-300 ease-in-out hover:scale-150"
+            className="w-full h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110 p-2"
           />
         </div>
       ))}
