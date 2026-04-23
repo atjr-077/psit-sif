@@ -25,13 +25,16 @@ import avyuktLogo from '../assets/logos/avyukt.png';
 import nuttyLogo from '../assets/logos/nutty.png';
 import vnorganicsLogo from '../assets/logos/vnorganics.png';
 import service100Logo from '../assets/logos/100service.png';
-import edubukLogo from '../assets/logos/edubuk.jpg';
+import edubukLogo from '../assets/logos/edubuk.png';
 import cleanvitalsLogo from '../assets/logos/cleanvitals.png';
 import greenarriveLogo from '../assets/logos/greenarrive.png';
 import tepiaiLogo from '../assets/logos/tepiai.jpg';
 import adasLogo from '../assets/logos/adas.png';
 import rassLogo from '../assets/logos/rass.png';
 import exhibyLogo from '../assets/logos/exhiby.png';
+import saatphereLogo from '../assets/logos/saatphere.png';
+import campushaatLogo from '../assets/logos/campushaat.png';
+import ramanLogo from '../assets/logos/raman.png';
 
 
 const startupData = [
@@ -56,12 +59,12 @@ const startupData = [
   { name: "100service (Homivo)", founders: "Harsh Katiyar", industry: "Home Services", stage: "Early Revenue", website: "100service.in", logo: service100Logo },
   { name: "Edubuk Technologies", founders: "Shivani Mehrotra", industry: "Education, Blockchain, AI", stage: "Early Revenue", website: "edubuk.io", logo: edubukLogo },
   { name: "Samrupa Tech LLP", founders: "Samar Choudhury", industry: "Automobile, Sustainability", stage: "Prototyping", website: "samrupa.com" },
-  { name: "Saat Phere", founders: "Manoj Kumar", industry: "Wedding & Events, AI", stage: "Early Revenue", website: "saat-phere.in" },
+  { name: "Saat Phere", founders: "Manoj Kumar", industry: "Wedding & Events, AI", stage: "Early Revenue", website: "saat-phere.in", logo: saatphereLogo },
   { name: "Clean Vitals (Dassonz)", founders: "Dr. Soumyakant Das", industry: "Food & Health Tech", stage: "Early Revenue", website: "cleanvitals.com", logo: cleanvitalsLogo },
-  { name: "Campus Haat", founders: "Guddu Kumar", industry: "FoodTech", stage: "Early Revenue", website: "campushaat.com" },
+  { name: "Campus Haat", founders: "Guddu Kumar", industry: "FoodTech", stage: "Early Revenue", website: "campushaat.com", logo: campushaatLogo },
   { name: "GreenArrive", founders: "Shubham Gupta / Sachin Sengar", industry: "Agritech", stage: "Early Revenue", website: "", logo: greenarriveLogo },
   { name: "Tepi AI", founders: "Akshita Bhardwaj", industry: "Education, AI", stage: "Ideation", website: "tepiai.com", logo: tepiaiLogo },
-  { name: "Raman Research & Innovation", founders: "Lavitra Sahu", industry: "Robotics / IoT", stage: "Ideation", website: "wegyanik.in" },
+  { name: "Raman Research & Innovation", founders: "Lavitra Sahu", industry: "Robotics / IoT", stage: "Ideation", website: "wegyanik.in", logo: ramanLogo },
   { name: "ADAS Power Solutions", founders: "Dhruv Agarwal", industry: "Technology Hardware", stage: "Prototyping", website: "", logo: adasLogo },
   { name: "RaySync Innovation", founders: "Gaurav Tiwari", industry: "IoT", stage: "Ideation", website: "raysyncinnovation.in" },
   { name: "Tackle Studioz", founders: "Aryan Bajpai", industry: "IT Services", stage: "—", website: "tacklestudioz.com" },
