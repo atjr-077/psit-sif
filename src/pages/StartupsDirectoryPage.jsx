@@ -40,6 +40,9 @@ import aarushLogo from '../assets/logos/aarush.png';
 import fabbricatoLogo from '../assets/logos/fabbricato.png';
 import zerowasteLogo from '../assets/logos/zerowaste.png';
 import trinovaLogo from '../assets/logos/trinova.png';
+import voikesLogo from '../assets/logos/voikes.png';
+import tackleLogo from '../assets/logos/tacklestudioz.png';
+import raysyncLogo from '../assets/logos/raysync.png';
 
 
 const startupData = [
@@ -71,11 +74,11 @@ const startupData = [
   { name: "Tepi AI", founders: "Akshita Bhardwaj", industry: "Education, AI", stage: "Ideation", website: "tepiai.com", logo: tepiaiLogo },
   { name: "Raman Research & Innovation", founders: "Lavitra Sahu", industry: "Robotics / IoT", stage: "Ideation", website: "wegyanik.in", logo: ramanLogo },
   { name: "ADAS Power Solutions", founders: "Dhruv Agarwal", industry: "Technology Hardware", stage: "Prototyping", website: "", logo: adasLogo },
-  { name: "RaySync Innovation", founders: "Gaurav Tiwari", industry: "IoT", stage: "Ideation", website: "raysyncinnovation.in" },
-  { name: "Tackle Studioz", founders: "Aryan Bajpai", industry: "IT Services", stage: "—", website: "tacklestudioz.com" },
+  { name: "RaySync Innovation", founders: "Gaurav Tiwari", industry: "IoT", stage: "Ideation", website: "raysyncinnovation.in", logo: raysyncLogo },
+  { name: "Tackle Studioz", founders: "Aryan Bajpai", industry: "IT Services", stage: "—", website: "tacklestudioz.com", logo: tackleLogo },
   { name: "Arixolve Ventures", founders: "Anmol Mishra", industry: "IT Services", stage: "—", website: "", logo: arixolveLogo },
   { name: "RASS Neuro Dynamics", founders: "Sparsh Verma", industry: "IoT / Automation", stage: "Early Traction", website: "", logo: rassLogo },
-  { name: "VOIKES Technologies", founders: "Ananvay Pandey", industry: "Human-Centric / Med-Tech", stage: "—", website: "voikes.framer.website" },
+  { name: "VOIKES Technologies", founders: "Ananvay Pandey", industry: "Human-Centric / Med-Tech", stage: "—", website: "voikes.framer.website", logo: voikesLogo },
   { name: "Trinova Innovation", founders: "Akash Sahu", industry: "IoT Technology", stage: "—", website: "", logo: trinovaLogo },
   { name: "Aarush Eco Tech", founders: "Dr. Amit Singh Chauhan", industry: "AI/ML", stage: "—", website: "ecotech.co.in", logo: aarushLogo },
   { name: "Thinktechno / Adflix", founders: "Ms. Anannya Sharma", industry: "AI/ML", stage: "—", website: "exhiby.in", logo: exhibyLogo },
@@ -83,7 +86,7 @@ const startupData = [
   { name: "Edufutura", founders: "Nishant Dixit", industry: "IT Services", stage: "—", website: "" },
   { name: "Kanpur Aero Modelling Club", founders: "Aditya Kumar Kushwaha", industry: "Education Technology", stage: "—", website: "" },
   { name: "Zerythron", founders: "Mo Ryan Yunus", industry: "Waste Management", stage: "—", website: "", logo: zerowasteLogo },
-  { name: "Fabbricato", founders: "—", industry: "Manufacturing / Design", stage: "Development", website: "", logo: fabbricatoLogo }
+  { name: "Fabbricato", founders: "—", industry: "Manufacturing / Design", stage: "Development", website: "", logo: fabbricatoLogo },
 ].map((s, i) => ({
   ...s,
   id: i,
