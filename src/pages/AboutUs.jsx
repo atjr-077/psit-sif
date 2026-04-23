@@ -1,5 +1,99 @@
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import dualiteLogo from "../assets/logos/dualite.png";
+import senseLogo from "../assets/logos/senseoriginal.png";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+
+const SuccessStoriesSlider = () => {
+  const stories = [
+    {
+      company: "Dualite",
+      logo: dualiteLogo,
+      achievement: "Secured funding from 100X.VC",
+      description: "Dualite successfully transitioned from an early-stage prototype to a venture-backed startup, securing substantial funding from the prestigious 100X.VC. Their journey showcases the power of technical precision and market-ready innovation nurtured within the PSIT-SIF ecosystem.",
+      impact: "Revolutionizing how developers and designers collaborate through seamless design-to-code automation."
+    },
+    {
+      company: "Senseoriginal Technologies",
+      logo: senseLogo,
+      achievement: "Early Revenue Growth & Market Traction",
+      description: "Senseoriginal has demonstrated exceptional growth by achieving early revenue milestones in the competitive IoT and Deeptech landscape. Their focus on reducing counterfeiting through advanced technology has positioned them as a rising leader in brand protection.",
+      impact: "Leading the charge in deep-tech innovation by providing cutting-edge security solutions for global brands."
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % stories.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [stories.length]);
+
+  return (
+    <div className="relative group">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100 flex flex-col md:flex-row items-center gap-10"
+        >
+          <div className="w-full md:w-1/3 flex flex-col items-center">
+            <div className="w-48 h-48 bg-gray-50 rounded-2xl p-6 flex items-center justify-center mb-6">
+              <img src={stories[currentIndex].logo} alt={stories[currentIndex].company} className="w-full h-full object-contain" />
+            </div>
+            <div className="px-4 py-1.5 bg-green-100 text-green-700 rounded-full text-sm font-bold uppercase tracking-wider">
+              {stories[currentIndex].achievement}
+            </div>
+          </div>
+
+          <div className="w-full md:w-2/3 relative">
+            <Quote className="absolute -top-6 -left-6 w-12 h-12 text-green-100 -z-10" />
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">{stories[currentIndex].company}</h3>
+            <p className="text-xl text-gray-600 leading-relaxed mb-6 italic">
+              "{stories[currentIndex].description}"
+            </p>
+            <div className="flex items-start gap-3">
+              <div className="mt-1.5 w-2 h-2 rounded-full bg-green-500 shrink-0" />
+              <p className="text-gray-800 font-medium">
+                <span className="text-green-600 font-bold">The Impact:</span> {stories[currentIndex].impact}
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      <div className="flex justify-center gap-4 mt-8">
+        <button 
+          onClick={() => setCurrentIndex((prev) => (prev - 1 + stories.length) % stories.length)}
+          className="p-3 rounded-full bg-white shadow-md border border-gray-100 text-gray-400 hover:text-green-600 hover:border-green-200 transition-all"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button 
+          onClick={() => setCurrentIndex((prev) => (prev + 1) % stories.length)}
+          className="p-3 rounded-full bg-white shadow-md border border-gray-100 text-gray-400 hover:text-green-600 hover:border-green-200 transition-all"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      <div className="flex justify-center gap-2 mt-4">
+        {stories.map((_, idx) => (
+          <div 
+            key={idx}
+            className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-green-500' : 'w-2 bg-gray-200'}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default function AboutUs() {
   return (
@@ -161,10 +255,10 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Success Stories Section */}
-        <div className="bg-green-100 py-16 px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="heading mb-10">
+        {/* Success Stories Section - Sliding Carousel */}
+        <div className="bg-gradient-to-b from-green-50 to-white py-20 px-4 overflow-hidden">
+          <div className="max-w-5xl mx-auto">
+            <div className="heading mb-16">
               <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
                 Success Stories
               </h2>
@@ -172,20 +266,8 @@ export default function AboutUs() {
                 <div className="bg-green-500 h-[5px] w-[180px]" />
               </div>
             </div>
-            <div className="flex justify-center mb-8">
-              <div className="bg-green-100 h-1 w-32 md:w-40" />
-            </div>
-            <div className="space-y-6 text-lg md:text-xl lg:text-2xl text-gray-600">
-              <p>
-                One of our notable incubated startups, <span className="font-semibold text-gray-800">Dualite</span>, successfully
-                secured funding from <span className="font-semibold text-gray-800">100X.VC</span>, showcasing the profound impact
-                of our incubation and mentorship programs in nurturing groundbreaking innovations.
-              </p>
-              <p>
-                With an unwavering commitment to fostering an entrepreneurial culture, <span className="font-semibold text-gray-800">PSIT-SIF</span> is actively
-                shaping the future of innovation and startup success, both at <span className="font-semibold text-gray-800">PSIT</span> and beyond.
-              </p>
-            </div>
+
+            <SuccessStoriesSlider />
           </div>
         </div>
       </div>
