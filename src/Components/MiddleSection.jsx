@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Target, Lightbulb, Users, BadgeDollarSign } from 'lucide-react';
-import img from "../assets/itbi-poster.jpg";
-import img2 from "../assets/th.png";
-import img5 from "../assets/banner.jpg";
+import itbiBoard from "../assets/itbi_board.png";
+import innovationLogo from "../assets/innovation_cell_logo.png";
 
 const MiddleSection = () => {
 
@@ -70,7 +69,9 @@ const MiddleSection = () => {
                       <p>Focus Areas: Ideas should align with societal, technological, or economic challenges and have scalable potential.</p>
                       <p>Commitment: Applicants must commit to using the i-TBI facilities and mentorship to develop their idea into a startup or product.</p>
                       <p>Inclusion: Priority may be given to underrepresented groups or regions lacking innovation ecosystems.</p>
-                      {/* Learn more link removed */}
+                      <a href="#" className="text-green-600 hover:underline block mt-2">
+                        Learn more →
+                      </a>
                     </div>
                   </div>
                 )}
@@ -103,8 +104,9 @@ const MiddleSection = () => {
                         <p>- Prototype to Product: Facilitate the journey from prototype development to market-ready products through funding and mentorship.</p>
                         <p>- Capacity Building: Enhance the entrepreneurial capabilities of students, faculties, and local communities.</p>
                       </div>
-                      {/* Learn more link removed */}
-
+                      <a href="#" className="text-green-600 hover:underline block mt-2">
+                        Learn more →
+                      </a>
                     </div>
                   </div>
                 )}
@@ -121,8 +123,8 @@ const MiddleSection = () => {
                 <div className="relative z-10 p-6 space-y-6">
                   <div className="bg-white rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform">
                     <img
-                      src={img}
-                      alt="Student studying"
+                      src={itbiBoard}
+                      alt="DST Inclusive-TBI"
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -136,9 +138,9 @@ const MiddleSection = () => {
             </div>
             <div className="mt-12 w-full h-[300px]">
               <img
-                src={img5}
-                alt="Background Pattern"
-                className="w-full h-full rounded-lg"
+                src={innovationLogo}
+                alt="Innovation & Entrepreneurship Cell"
+                className="w-full h-full rounded-lg object-contain bg-white p-4 shadow-md"
               />
             </div>
           </div>
