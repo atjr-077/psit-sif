@@ -227,12 +227,15 @@ const StartupCard = ({ startup, viewMode }) => {
       className={`bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-green-100 group flex ${isGrid ? 'flex-col' : 'flex-row items-center p-4'}`}
     >
       <div className={`${isGrid ? 'p-6 flex-grow' : 'flex-grow px-4'}`}>
-        <div className="flex justify-between items-start mb-4">
-          <div className={`w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 flex items-center justify-center text-green-600 group-hover:from-green-600 group-hover:to-emerald-600 group-hover:text-white transition-all duration-300 ${isGrid ? '' : 'flex-shrink-0 mr-4'}`}>
+        <div className={`flex justify-between items-start ${isGrid ? 'mb-6' : 'mr-6 flex-shrink-0'}`}>
+          <div className={`${isGrid ? 'w-full h-32' : 'w-24 h-24'} bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center group-hover:bg-white transition-colors duration-300 border border-gray-100 relative`}>
             {startup.logo ? (
-              <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain p-1" />
+              <img src={startup.logo} alt={startup.name} className="w-full h-full object-contain p-2 transition-transform duration-500 group-hover:scale-110" />
             ) : (
-              <Rocket className="w-6 h-6" />
+              <div className="flex flex-col items-center justify-center text-gray-300">
+                <Rocket className={`${isGrid ? 'w-10 h-10' : 'w-8 h-8'} mb-1 group-hover:text-green-500 transition-colors`} />
+                <span className="text-[8px] font-bold uppercase tracking-widest group-hover:text-green-600">Growth</span>
+              </div>
             )}
           </div>
           {startup.website && (
@@ -240,7 +243,7 @@ const StartupCard = ({ startup, viewMode }) => {
               href={`https://${startup.website}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-gray-50 text-gray-400 hover:bg-green-50 hover:text-green-600 transition-colors"
+              className={`absolute p-2 rounded-lg bg-white/80 backdrop-blur-sm text-gray-400 hover:bg-green-50 hover:text-green-600 transition-all shadow-sm ${isGrid ? 'top-4 right-4' : 'top-2 right-2'} opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0`}
               title="Visit Website"
             >
               <ExternalLink className="w-4 h-4" />
