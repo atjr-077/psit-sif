@@ -70,9 +70,7 @@ const MiddleSection = () => {
                       <p>Focus Areas: Ideas should align with societal, technological, or economic challenges and have scalable potential.</p>
                       <p>Commitment: Applicants must commit to using the i-TBI facilities and mentorship to develop their idea into a startup or product.</p>
                       <p>Inclusion: Priority may be given to underrepresented groups or regions lacking innovation ecosystems.</p>
-                      <a href="#" className="text-green-600 hover:underline block mt-2">
-                        Learn more →
-                      </a>
+                      {/* Learn more link removed */}
                     </div>
                   </div>
                 )}
@@ -105,9 +103,8 @@ const MiddleSection = () => {
                         <p>- Prototype to Product: Facilitate the journey from prototype development to market-ready products through funding and mentorship.</p>
                         <p>- Capacity Building: Enhance the entrepreneurial capabilities of students, faculties, and local communities.</p>
                       </div>
-                      <a href="#" className="text-green-600 hover:underline block mt-2">
-                        Learn more →
-                      </a>
+                      {/* Learn more link removed */}
+
                     </div>
                   </div>
                 )}

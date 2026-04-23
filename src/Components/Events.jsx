@@ -44,16 +44,7 @@ const FeaturedEventCard = ({ event }) => {
               {event.description}
             </p>
           </div>
-          <div className="flex justify-center">
-            <a
-              href={event.url}
-              className="inline-flex items-center px-6 sm:px-8 py-2 sm:py-3 bg-green-600 text-white rounded-lg 
-                       transform transition-all duration-300 hover:bg-green-700 hover:shadow-md
-                       active:scale-95 text-base sm:text-lg"
-            >
-              Learn More
-            </a>
-          </div>
+          {/* Learn More link removed as requested */}
         </div>
       </div>
     </div>
@@ -78,12 +69,7 @@ const GridEventCard = ({ event }) => {
         <p className="text-gray-600 text-sm sm:text-base line-clamp-3 mb-3 sm:mb-4">
           {event.description}
         </p>
-        <a
-          href={event.url}
-          className="inline-flex items-center text-green-600 font-medium hover:text-green-700 transition-colors"
-        >
-          Learn More →
-        </a>
+        {/* Learn More link removed */}
       </div>
     </div>
   );
