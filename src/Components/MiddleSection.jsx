@@ -129,25 +129,27 @@ const MiddleSection = () => {
 
           {/* Right Image Section */}
           <div className="lg:w-[400px] w-full space-y-8">
-            <div className="standard-card group p-0 bg-blue-50 border border-blue-100 shadow-xl relative overflow-hidden">
-              <div className="w-full h-auto overflow-hidden border-b border-blue-100">
+            <div className="standard-card group p-0 bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden relative">
+              <div className="absolute top-0 left-0 right-0 h-2 bg-green-500 z-10" />
+              <div className="w-full h-auto overflow-hidden">
                 <img src={itbiBoard} alt="DST Inclusive-TBI" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold font-outfit mb-2 text-gray-900">Start Your Journey</h3>
-                <p className="text-gray-600 text-sm">Join the innovation ecosystem and transform your vision into reality.</p>
-                <div className="w-12 h-1 bg-green-500 mx-auto mt-4 rounded-full" />
+              <div className="p-8 text-center bg-white">
+                <h3 className="text-2xl font-extrabold font-outfit mb-3 text-gray-900 group-hover:text-green-600 transition-colors">Start Your Journey</h3>
+                <p className="text-gray-600 text-sm leading-relaxed font-medium">Join the innovation ecosystem and transform your vision into reality with expert guidance.</p>
+                <div className="w-16 h-1.5 bg-green-500 mx-auto mt-6 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               </div>
             </div>
 
-            <div className="standard-card group p-0 bg-blue-50 border border-blue-100 shadow-xl relative overflow-hidden">
-              <div className="w-full h-auto overflow-hidden border-b border-blue-100">
+            <div className="standard-card group p-0 bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden relative">
+              <div className="absolute top-0 left-0 right-0 h-2 bg-green-500 z-10" />
+              <div className="w-full h-auto overflow-hidden">
                 <img src={innovationLogo} alt="Innovation Cell" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-bold font-outfit mb-2 text-gray-900">Build Your Future</h3>
-                <p className="text-gray-600 text-sm">Empowering tomorrow's entrepreneurs with world-class mentorship and resources.</p>
-                <div className="w-12 h-1 bg-green-500 mx-auto mt-4 rounded-full" />
+              <div className="p-8 text-center bg-white">
+                <h3 className="text-2xl font-extrabold font-outfit mb-3 text-gray-900 group-hover:text-green-600 transition-colors">Build Your Future</h3>
+                <p className="text-gray-600 text-sm leading-relaxed font-medium">Empowering tomorrow's entrepreneurs with world-class mentorship and technological resources.</p>
+                <div className="w-16 h-1.5 bg-green-500 mx-auto mt-6 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               </div>
             </div>
           </div>
