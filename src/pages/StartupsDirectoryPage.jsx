@@ -126,17 +126,17 @@ const StartupDirectoryPage = () => {
       <main className="flex-grow pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
-          <div className="text-center mb-12">
+          <div className="section-heading-container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
+              <h1 className="section-title">
                 Startup <span className="text-green-600">Directory</span>
               </h1>
-              <div className="w-24 h-1.5 bg-green-500 mx-auto rounded-full mb-6"></div>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <div className="section-title-bar" />
+              <p className="section-subtitle">
                 Explore the vibrant ecosystem of PSIT-SIF incubated startups. From deep-tech innovation to sustainable solutions, discover the future leaders of the industry.
               </p>
             </motion.div>

@@ -111,15 +111,12 @@ const Facilities = () => {
     const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + workstationSlides.length) % workstationSlides.length);
 
     return (
-        <div className="py-8 sm:py-12 lg:py-16 px-4 bg-gray-50">
-            <div className="max-w-7xl mx-auto">
-                <div className="heading mb-10 text-center">
-                    <h2 className="font-semibold text-5xl text-black pb-5">Core Facilities</h2>
-                    <div className="flex justify-center">
-                        <div className="bg-green-500 h-[5px] w-[140px]" />
-                    </div>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-2 mb-20">
+        <div className="section-container">
+            <div className="section-heading-container">
+                <h2 className="section-title">Core Facilities</h2>
+                <div className="section-title-bar" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-20">
                     {facilities.map((facility, index) => (
                         <FacilityCard key={index} facility={facility} />
                     ))}
@@ -127,12 +124,10 @@ const Facilities = () => {
 
                 {/* Work Station Slider Section */}
                 <div className="mt-20">
-                    <div className="heading mb-10 text-center">
-                        <h2 className="font-semibold text-5xl text-black pb-5">Advanced Workstations</h2>
-                        <div className="flex justify-center">
-                            <div className="bg-green-500 h-[5px] w-[200px]" />
-                        </div>
-                        <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+                    <div className="section-heading-container">
+                        <h2 className="section-title">Advanced Workstations</h2>
+                        <div className="section-title-bar" />
+                        <p className="section-subtitle">
                             Our specialized innovation labs provide the tools and environment for entrepreneurs to build, test, and refine their technological solutions.
                         </p>
                     </div>

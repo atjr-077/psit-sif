@@ -102,13 +102,9 @@ export default function AboutUs() {
 
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div className="heading mb-10 mt-10">
-          <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
-            About Us
-          </h2>
-          <div className="flex justify-center">
-            <div className="bg-green-500 h-[5px] w-[140px]" />
-          </div>
+        <div className="section-heading-container mt-12">
+          <h2 className="section-title">About Us</h2>
+          <div className="section-title-bar" />
         </div>
 
         {/* Introduction Text */}
@@ -131,14 +127,10 @@ export default function AboutUs() {
         </div>
 
         {/* Key Features Section */}
-        <div className="py-10 bg-gradient-to-r from-green-50 to-green-100 mt-6">
-          <div className="heading mb-10">
-            <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
-              Key Features
-            </h2>
-            <div className="flex justify-center">
-              <div className="bg-green-500 h-[5px] w-[140px]" />
-            </div>
+        <div className="py-20 bg-gray-50 -mx-4 px-4 border-y border-gray-100">
+          <div className="section-heading-container">
+            <h2 className="section-title">Key Features</h2>
+            <div className="section-title-bar" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
@@ -195,13 +187,9 @@ export default function AboutUs() {
         <div className="py-16">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="lg:w-2/3">
-              <div className="heading mb-10">
-                <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
-                  Fueling Innovation at PSIT-SIF
-                </h2>
-                <div className="flex justify-center">
-                  <div className="bg-green-500 h-[5px] w-[300px]" />
-                </div>
+              <div className="section-heading-container text-left items-start mb-8">
+                <h2 className="section-title !text-left">Fueling Innovation at PSIT-SIF</h2>
+                <div className="section-title-bar !mx-0" />
               </div>
               <p className="text-lg md:text-xl lg:text-2xl text-gray-600 text-center">
                 At PSIT-SIF, we believe in the power of innovation to drive meaningful
@@ -235,13 +223,9 @@ export default function AboutUs() {
               />
             </div>
             <div className="lg:w-2/3">
-              <div className="heading mb-10">
-                <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
-                  Focus Area: Emerging Technologies
-                </h2>
-                <div className="flex justify-center">
-                  <div className="bg-green-500 h-[5px] w-[300px]" />
-                </div>
+              <div className="section-heading-container text-left items-start mb-8">
+                <h2 className="section-title !text-left">Focus Area: Emerging Technologies</h2>
+                <div className="section-title-bar !mx-0" />
               </div>
               <p className="text-lg md:text-xl lg:text-2xl text-gray-600 text-center">
                 PSIT-SIF is actively supporting startups in cutting-edge fields like Artificial Intelligence (AI),
@@ -258,13 +242,9 @@ export default function AboutUs() {
         {/* Success Stories Section - Sliding Carousel */}
         <div className="bg-gradient-to-b from-green-50 to-white py-20 px-4 overflow-hidden">
           <div className="max-w-5xl mx-auto">
-            <div className="heading mb-16">
-              <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
-                Success Stories
-              </h2>
-              <div className="flex justify-center">
-                <div className="bg-green-500 h-[5px] w-[180px]" />
-              </div>
+            <div className="section-heading-container">
+              <h2 className="section-title">Success Stories</h2>
+              <div className="section-title-bar" />
             </div>
 
             <SuccessStoriesSlider />

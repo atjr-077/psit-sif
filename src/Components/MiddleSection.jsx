@@ -19,23 +19,26 @@ const MiddleSection = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen">
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col lg:flex-row gap-8 items-start">
+    <div className="bg-white">
+      <div className="section-container">
+        <div className="section-heading-container">
+          <h2 className="section-title">i-TBI Program</h2>
+          <div className="section-title-bar" />
+          <p className="section-subtitle">
+            Inclusive TBI is a Department of Science & Technology (DST) initiative fostering innovation and entrepreneurship at HI and nearby geographies.
+          </p>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* Left Content Section */}
           <div className="flex-1 space-y-8">
-            {/* Header Section */}
-            <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-              <h1 className="text-4xl font-bold mb-6 text-gray-900 inline-block bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">
-                i-TBI Program
-              </h1>
-
+            <div className="standard-card p-8">
               {/* Highlights Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 {highlights.map((item, index) => (
-                  <div key={index} className="flex flex-col items-center justify-center gap-2 bg-blue-50 p-3 rounded-lg text-green-700">
+                  <div key={index} className="flex flex-col items-center justify-center gap-3 bg-gray-50 p-4 rounded-2xl text-green-600 border border-gray-100 font-semibold shadow-sm hover:shadow-md hover:bg-white transition-all transform hover:-translate-y-1">
                     {item.icon}
-                    <span className="text-sm font-medium text-center">{item.text}</span>
+                    <span className="text-sm text-center font-outfit">{item.text}</span>
                   </div>
                 ))}
               </div>
