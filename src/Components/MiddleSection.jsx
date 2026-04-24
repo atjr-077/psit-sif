@@ -129,25 +129,25 @@ const MiddleSection = () => {
 
           {/* Right Image Section */}
           <div className="lg:w-[400px] w-full space-y-8">
-            <div className="standard-card group p-0 bg-gradient-to-br from-blue-500 to-blue-700 border-none shadow-xl relative overflow-hidden">
-              <div className="w-full h-auto overflow-hidden">
+            <div className="standard-card group p-0 bg-blue-50 border border-blue-100 shadow-xl relative overflow-hidden">
+              <div className="w-full h-auto overflow-hidden border-b border-blue-100">
                 <img src={itbiBoard} alt="DST Inclusive-TBI" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="p-6 text-center text-white">
-                <h3 className="text-xl font-bold font-outfit mb-2">Start Your Journey</h3>
-                <p className="text-blue-50 opacity-90 text-sm">Join the innovation ecosystem and transform your vision into reality.</p>
-                <div className="w-12 h-1 bg-white mx-auto mt-4 rounded-full opacity-50" />
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold font-outfit mb-2 text-gray-900">Start Your Journey</h3>
+                <p className="text-gray-600 text-sm">Join the innovation ecosystem and transform your vision into reality.</p>
+                <div className="w-12 h-1 bg-green-500 mx-auto mt-4 rounded-full" />
               </div>
             </div>
 
-            <div className="standard-card group p-0 bg-gradient-to-br from-blue-500 to-blue-700 border-none shadow-xl relative overflow-hidden">
-              <div className="w-full h-auto overflow-hidden">
+            <div className="standard-card group p-0 bg-blue-50 border border-blue-100 shadow-xl relative overflow-hidden">
+              <div className="w-full h-auto overflow-hidden border-b border-blue-100">
                 <img src={innovationLogo} alt="Innovation Cell" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <div className="p-6 text-center text-white">
-                <h3 className="text-xl font-bold font-outfit mb-2">Build Your Future</h3>
-                <p className="text-blue-50 opacity-90 text-sm">Empowering tomorrow's entrepreneurs with world-class mentorship and resources.</p>
-                <div className="w-12 h-1 bg-white mx-auto mt-4 rounded-full opacity-50" />
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-bold font-outfit mb-2 text-gray-900">Build Your Future</h3>
+                <p className="text-gray-600 text-sm">Empowering tomorrow's entrepreneurs with world-class mentorship and resources.</p>
+                <div className="w-12 h-1 bg-green-500 mx-auto mt-4 rounded-full" />
               </div>
             </div>
           </div>
