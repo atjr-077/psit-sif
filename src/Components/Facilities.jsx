@@ -197,7 +197,6 @@ const Facilities = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
