@@ -17,6 +17,7 @@ import workstation from '../assets/facilities/workstation.png';
 import cnc from '../assets/facilities/cnc.png';
 import printer3d from '../assets/facilities/3dprinter.png';
 import labTable from '../assets/facilities/lab_table.jpg';
+import cuttingEdgeResearch from '../assets/facilities/cutting_edge_research.jpg';
 
 const facilities = [
     {
@@ -24,7 +25,7 @@ const facilities = [
         description: "A dedicated space for budding entrepreneurs to brainstorm and develop their ideas.",
         images: [startup1, startup2, startup3]
     },
-    { title: "Cutting-edge Research Space", description: "Equipped with modern tools and technologies for advanced research and development.", image: labTable },
+    { title: "Cutting-edge Research Space", description: "Equipped with modern tools and technologies for advanced research and development.", image: cuttingEdgeResearch },
     { title: "Group Discussion Room", description: "A collaborative space designed for team meetings and brainstorming sessions.", image: discussionRoom },
     { title: "Library", description: "A vast collection of books, research papers, and digital resources for academic enrichment.", image: library },
     { title: "Conference Hall", description: "Spacious hall for seminars, guest lectures, and industry interactions.", image: startupRoom },
