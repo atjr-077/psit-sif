@@ -6,7 +6,6 @@ import expo2 from "../assets/banner/expo2.jpg";
 import gokart from "../assets/banner/gokart.jpg";
 import incub from "../assets/banner/incub.jpg";
 import room from "../assets/banner/room.jpg";
-import audi from "../assets/banner/audi.jpg";
 
 const MissionSection = () => {
   const slides = [
