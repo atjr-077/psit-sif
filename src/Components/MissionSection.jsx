@@ -6,14 +6,14 @@ import expo2 from "../assets/banner/expo2.jpg";
 import gokart from "../assets/banner/gokart.jpg";
 import incub from "../assets/banner/incub.jpg";
 import room from "../assets/banner/room.jpg";
-import lobby from "../assets/banner/lobby.jpg";
+import studentWork from "../assets/banner/students_working.png";
 
 const MissionSection = () => {
   const slides = [
     {
-      image: lobby,
+      image: studentWork,
       title: "Welcome to PSIT Startup and Incubation Foundation",
-      description: "State-of-the-art infrastructure designed to foster innovation, collaboration, and entrepreneurial excellence."
+      description: "Empowering next-generation innovators with the mentors and tools needed to change the world."
     },
     {
       image: audi,
