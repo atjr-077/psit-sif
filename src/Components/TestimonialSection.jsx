@@ -12,7 +12,7 @@ const TestimonialSection = () => {
       imageSrc: `${img1}`
     },
     {
-      name: "Dr. Manmohan Shukla",
+      name: "Dr. Man Mohan Shukla",
       role: "Group Director",
       comment: "At PSIT, we are committed to providing quality education and shaping future leaders for a better tomorrow.",
       imageSrc: `${img2}`
