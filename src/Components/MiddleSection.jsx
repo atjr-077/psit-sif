@@ -140,8 +140,8 @@ const MiddleSection = () => {
               </div>
             </div>
 
-            <div className="standard-card p-8 flex items-center justify-center bg-gray-50 hover:bg-white transition-colors duration-500">
-              <img src={innovationLogo} alt="Innovation Cell" className="max-w-[200px] w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
+            <div className="standard-card p-8 flex items-center justify-center bg-white shadow-md">
+              <img src={innovationLogo} alt="Innovation Cell" className="max-w-[200px] w-full h-auto object-contain transition-transform duration-500 hover:scale-105" />
             </div>
           </div>
         </div>

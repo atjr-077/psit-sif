@@ -8,7 +8,7 @@ const Dean = () => {
         <div className="lg:w-1/3 flex flex-col items-center">
           <div className="standard-card p-4 group">
             <img 
-              className="transition-transform duration-500 group-hover:scale-105 rounded-xl grayscale hover:grayscale-0"
+              className="transition-transform duration-500 group-hover:scale-105 rounded-xl"
               src={img}
               alt="Dean's portrait"
             />
