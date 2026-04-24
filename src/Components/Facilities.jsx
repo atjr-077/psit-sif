@@ -34,8 +34,7 @@ const facilities = [
 const workstationSlides = [
     { image: workstation, title: "Modern Workstations", description: "Equipped with high-performance systems for intensive development and design work." },
     { image: labTable, title: "Electronics Design Lab", description: "Advanced testing and prototyping tools for electronics and hardware development." },
-    { image: cnc, title: "CNC Prototyping", description: "Precision machining facilities for creating high-quality physical prototypes." },
-    { image: printer3d, title: "3D Printing Zone", description: "State-of-the-art 3D printers for rapid prototyping and iterative design." }
+    { image: cnc, title: "CNC Prototyping", description: "Precision machining facilities for creating high-quality physical prototypes." }
 ];
 
 const FacilityCard = ({ facility }) => {
