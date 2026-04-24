@@ -53,27 +53,43 @@ const FacilityCard = ({ facility }) => {
     const displayImage = hasMultipleImages ? facility.images[imgIndex] : facility.image;
 
     return (
-        <div className="group relative rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-1 transition-all duration-300 h-80">
+        <div className="group relative rounded-2xl overflow-hidden shadow-xl transform hover:-translate-y-2 transition-all duration-500 h-[320px] cursor-pointer">
             <AnimatePresence mode="wait">
                 <motion.img
                     key={imgIndex}
                     src={displayImage}
                     alt={facility.title}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 absolute inset-0"
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 1.05 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 absolute inset-0"
                 />
             </AnimatePresence>
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent text-center p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300 z-10">
-                <h3 className="text-xl font-bold text-white mb-2">{facility.title}</h3>
-                <p className="text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300">{facility.description}</p>
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
+
+            {/* Content Container */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col justify-end h-full">
+                <h3 className="text-2xl font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">
+                    {facility.title}
+                </h3>
+                <div className="overflow-hidden">
+                    <p className="text-sm text-gray-100 opacity-0 group-hover:opacity-100 translate-y-8 group-hover:translate-y-0 transition-all duration-500 delay-100 leading-relaxed font-medium">
+                        {facility.description}
+                    </p>
+                </div>
+                
+                {/* Decorative bar */}
+                <div className="w-12 h-1 bg-green-500 mt-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-200" />
             </div>
+
+            {/* Pagination dots for multi-image cards */}
             {hasMultipleImages && (
-                <div className="absolute top-4 right-4 flex space-x-1 z-20">
+                <div className="absolute top-4 right-4 flex space-x-1.5 z-20 bg-black/20 backdrop-blur-md px-2 py-1.5 rounded-full">
                     {facility.images.map((_, i) => (
-                        <div key={i} className={`w-1.5 h-1.5 rounded-full transition-all ${i === imgIndex ? 'bg-green-500 w-4' : 'bg-white/50'}`} />
+                        <div key={i} className={`h-1.5 rounded-full transition-all duration-300 ${i === imgIndex ? 'bg-green-500 w-4' : 'bg-white/40 w-1.5'}`} />
                     ))}
                 </div>
             )}
