@@ -7,7 +7,7 @@ const TestimonialSection = () => {
   const testimonials = [
     {
       name: "Mr. Pranveer Singh",
-      role: "Chair Person",
+      role: "Chairman",
       comment: "Welcome to PSIT, where we strive to nurture talent, inspire innovation, and empower students to achieve excellence.",
       imageSrc: `${img1}`
     },
@@ -19,7 +19,7 @@ const TestimonialSection = () => {
     },
     {
       name: "Dr. Raghvendra Singh",
-      role: " Director",
+      role: "Director",
       comment: "Great balance of academics and extracurricular activities.",
       imageSrc: `${img3}`
     },
@@ -32,36 +32,37 @@ const TestimonialSection = () => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4">
-      <div className="heading m-[70px]">
-        <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
-          Our Dignitaries
-        </h2>
-        <div className="flex justify-center">
-          <div className="bg-green-500 h-[5px] w-[140px]" />
-        </div>
+    <div className="section-container">
+      <div className="section-heading-container">
+        <h1 className="section-title">Our <span className="text-green-600">Dignitaries</span></h1>
+        <div className="section-title-bar" />
+        <p className="section-subtitle">
+          Guided by the vision and leadership of our esteemed mentors who pave the way for academic and entrepreneurial excellence.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex flex-col items-center text-center rounded-lg shadow-lg p-8 hover:shadow-xl 
-                     bg-gradient-to-b from-green-50 to-white
-                     transform hover:-translate-y-1 duration-200"
+            className="standard-card flex flex-col md:flex-row items-center p-8 gap-8 group"
           >
-            <div className="w-40 h-48 mb-6 overflow-hidden rounded-lg shadow-md border-2 border-green-200">
+            <div className="w-48 h-56 flex-shrink-0 overflow-hidden rounded-2xl shadow-lg border-2 border-green-100 group-hover:border-green-500 transition-colors duration-500">
               <img
                 src={testimonial.imageSrc}
                 alt={testimonial.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
 
-            <div className="flex-1">
-              <p className="text-gray-600 mb-6 italic text-lg leading-relaxed">"{testimonial.comment}"</p>
-              <h3 className="font-bold text-2xl text-gray-800 mb-2">{testimonial.name}</h3>
-              <p className="text-green-600 font-medium uppercase tracking-wider text-sm">{testimonial.role}</p>
+            <div className="flex-1 text-center md:text-left">
+              <div className="mb-6 relative">
+                 <span className="text-4xl text-green-200 absolute -top-4 -left-2 font-serif">"</span>
+                 <p className="text-gray-600 italic text-lg leading-relaxed relative z-10">{testimonial.comment}</p>
+                 <span className="text-4xl text-green-200 absolute -bottom-8 -right-2 font-serif">"</span>
+              </div>
+              <h3 className="font-bold text-2xl text-gray-900 mb-1 font-outfit">{testimonial.name}</h3>
+              <p className="text-green-600 font-bold uppercase tracking-widest text-xs font-inter">{testimonial.role}</p>
             </div>
           </div>
         ))}
