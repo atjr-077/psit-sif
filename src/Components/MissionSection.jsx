@@ -100,7 +100,7 @@ const MissionSection = () => {
   };
 
   return (
-    <div className="w-full h-[500px] relative overflow-hidden">
+    <div className="w-full h-[600px] sm:h-[700px] relative overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
@@ -114,15 +114,17 @@ const MissionSection = () => {
         >
           <img
             src={slides[currentIndex].image}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             alt={slides[currentIndex].title}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
+          {/* Improved Gradient Overlay: Darker at bottom for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between">
+          {/* Navigation Controls */}
+          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between z-20">
             <button
-              className="btn btn-circle bg-white/30 hover:bg-white/50 transition-colors duration-200"
+              className="btn btn-circle bg-white/20 hover:bg-white/40 border-none text-white backdrop-blur-sm transition-all duration-200"
               onClick={prevSlide}
             >
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
@@ -130,7 +132,7 @@ const MissionSection = () => {
               </svg>
             </button>
             <button
-              className="btn btn-circle bg-white/30 hover:bg-white/50 transition-colors duration-200"
+              className="btn btn-circle bg-white/20 hover:bg-white/40 border-none text-white backdrop-blur-sm transition-all duration-200"
               onClick={nextSlide}
             >
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
@@ -139,15 +141,20 @@ const MissionSection = () => {
             </button>
           </div>
 
+          {/* Text Content Positioned at Bottom */}
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center"
+            className="absolute inset-0 flex flex-col items-center justify-end pb-16 sm:pb-24 px-6 text-center z-10"
             variants={textVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{slides[currentIndex].title}</h2>
-            <p className="text-white/90 text-base sm:text-lg">{slides[currentIndex].description}</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg max-w-4xl tracking-tight">
+              {slides[currentIndex].title}
+            </h2>
+            <p className="text-white/90 text-lg sm:text-xl md:text-2xl max-w-3xl drop-shadow-md font-medium">
+              {slides[currentIndex].description}
+            </p>
           </motion.div>
         </motion.div>
       </AnimatePresence>
