@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Calendar, MapPin, Users } from 'lucide-react';
-import img from "../assets/events/TechSpire.jpg"
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import img1 from "../assets/events/startup.jpg"
 import img3 from "../assets/events/EE.jpg"
 import img4 from "../assets/events/demoday.jpg"
@@ -23,29 +22,23 @@ const showcaseImages = [
 
 const FeaturedEventCard = ({ event }) => {
   return (
-    <div className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl mb-8">
-      <div className="flex flex-col lg:flex-row">
-        {/* Image container - Responsive height */}
-        <div className="relative w-full lg:w-1/2 overflow-hidden">
-          <img
-            src={event.image}
-            alt={event.title}
-            className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-        {/* Content container - Better padding for mobile */}
-        <div className="lg:w-1/2 p-4 sm:p-6 lg:p-8 bg-gradient-to-b from-green-100 to-green-50 flex flex-col justify-center items-center text-center">
-          <div className="mb-4 lg:mb-6">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-2 sm:mb-4 group-hover:text-green-700 transition-colors">
-              {event.title}
-            </h2>
-            <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
-              {event.description}
-            </p>
-          </div>
-          {/* Learn More link removed as requested */}
-        </div>
+    <div className="group standard-card flex flex-col lg:flex-row mb-12">
+      <div className="relative w-full lg:w-1/2 overflow-hidden h-80 lg:h-[450px]">
+        <img
+          src={event.image}
+          alt={event.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+      </div>
+      <div className="lg:w-1/2 p-10 flex flex-col justify-center bg-gray-50/50">
+        <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-green-600 transition-colors">
+          {event.title}
+        </h3>
+        <p className="text-gray-600 leading-relaxed text-lg font-medium">
+          {event.description}
+        </p>
+        <div className="w-16 h-1.5 bg-green-500 mt-8 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
       </div>
     </div>
   );
@@ -53,23 +46,22 @@ const FeaturedEventCard = ({ event }) => {
 
 const GridEventCard = ({ event }) => {
   return (
-    <div className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-      <div className="relative overflow-hidden">
+    <div className="group standard-card">
+      <div className="relative overflow-hidden h-56">
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-40 sm:h-48 md:h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500" />
       </div>
-      <div className="p-4 sm:p-5 bg-gradient-to-b from-green-50 to-white text-center">
-        <h3 className="font-bold text-lg sm:text-xl text-gray-800 mb-2 sm:mb-3 group-hover:text-green-700 transition-colors">
+      <div className="p-8">
+        <h3 className="font-bold text-xl text-gray-900 mb-4 group-hover:text-green-600 transition-colors">
           {event.title}
         </h3>
-        <p className="text-gray-600 text-sm sm:text-base line-clamp-3 mb-3 sm:mb-4">
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
           {event.description}
         </p>
-        {/* Learn More link removed */}
       </div>
     </div>
   );
@@ -92,32 +84,27 @@ const Event = () => {
     {
       image: img1,
       title: 'StartUp Charcha 3.0',
-      description: 'STARTUP CHARCHA 3.0, an exclusive talk show with Mr. Nitin Sharma, Founder of ROAD PILOT, as our esteemed chief guest. The engaging session sparked meaningful conversations and ignited entrepreneurial spirits. The event witnessed an overwhelming response from students, who benefited from Mr. Sharma valuable insights on entrepreneurship and innovation. We extend our gratitude to Mr. Sharma for sharing his expertise and inspiring the next generation of leaders.',
-      url: '#'
+      description: 'STARTUP CHARCHA 3.0, an exclusive talk show with Mr. Nitin Sharma, Founder of ROAD PILOT, as our esteemed chief guest. The engaging session ignited entrepreneurial spirits and sparked meaningful innovation discussions.',
     },
     {
       image: img3,
       title: 'Empowering Entrepreneurs',
-      description: 'From February 12th to February 16th, 2024, aspiring entrepreneurs were treated to a transformative series of 20 workshops aimed at equipping them with essential management skills to thrive in today\'s competitive business landscape',
-      url: '#'
+      description: 'A transformative series aimed at equipping aspiring leaders with essential management skills to thrive in today\'s competitive landscape through specialized technical workshops.',
     },
     {
       image: img4,
-      title: 'Demoday',
-      description: 'The DemoDay event, organized under the NIDHI ITBI initiative, was a dynamic platform designed to support and showcase innovative startups.',
-      url: '#'
+      title: 'Demo Day',
+      description: 'Organized under the NIDHI ITBI initiative, providing a dynamic platform for innovators to showcase prototypes and pitch ground-breaking ideas to the ecosystem.',
     },
     {
       image: img5,
       title: 'Hustlers',
-      description: 'Dynamic energy filled the room at Hustlers as B-Tech first-year students engaged in an inspiring session with Sanchit Gupta, founder & CEO of Wyvate.',
-      url: '#'
+      description: 'Engaging mentors from the industry to inspire first-year engineering students to think big and embrace the startup mindset from day one.',
     },
     {
       image: img6,
       title: 'StartUp Charcha 2.0',
-      description: 'The event featured an inspiring one-on-one conversation with Mr. Shivendra Gupta, Co-founder of Samocha and Tea Origin, and KOJO TEDxSpeaker.',
-      url: '#'
+      description: 'Featuring deep-dive conversations with successful founders like Mr. Shivendra Gupta, sharing real-world insights on scaling and market entry strategies.',
     }
   ];
 
@@ -125,101 +112,96 @@ const Event = () => {
   const remainingEvents = events.slice(2);
 
   return (
-    <div className=" py-8 sm:py-12 lg:py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="heading mb-10">
-          <h2 className="flex justify-center font-semibold text-5xl text-black pb-5">
-            Our Events
-          </h2>
-          <div className="flex justify-center">
-            <div className="bg-green-500 h-[5px] w-[140px]" />
-          </div>
-        </div>
+    <div className="section-container">
+      <div className="section-heading-container">
+        <h2 className="section-title">Our Events</h2>
+        <div className="section-title-bar" />
+      </div>
 
-        {/* Showcase Carousel */}
-        <div className="mb-10 sm:mb-14 lg:mb-16 relative group">
-          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-                className="absolute inset-0"
-              >
-                <img
-                  src={showcaseImages[currentSlide].url}
-                  alt={showcaseImages[currentSlide].title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-center justify-center">
-                  <div className="p-6 sm:p-10 text-white text-center">
-                    <motion.h3 
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.2 }}
-                      className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2"
-                    >
-                      {showcaseImages[currentSlide].title}
-                    </motion.h3>
-                    <motion.p 
-                       initial={{ y: 20, opacity: 0 }}
-                       animate={{ y: 0, opacity: 1 }}
-                       transition={{ delay: 0.3 }}
-                      className="text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl"
-                    >
-                      {showcaseImages[currentSlide].description}
-                    </motion.p>
-                  </div>
+      {/* Showcase Carousel */}
+      <div className="mb-20 relative group">
+        <div className="relative w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.8 }}
+              className="absolute inset-0"
+            >
+              <img
+                src={showcaseImages[currentSlide].url}
+                alt={showcaseImages[currentSlide].title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end justify-center pb-16">
+                <div className="px-10 text-white text-center max-w-4xl">
+                  <motion.h3 
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="text-4xl md:text-5xl font-bold mb-4 font-outfit"
+                  >
+                    {showcaseImages[currentSlide].title}
+                  </motion.h3>
+                  <motion.p 
+                     initial={{ y: 20, opacity: 0 }}
+                     animate={{ y: 0, opacity: 1 }}
+                     transition={{ delay: 0.4 }}
+                    className="text-lg md:text-xl text-gray-200 font-medium"
+                  >
+                    {showcaseImages[currentSlide].description}
+                  </motion.p>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-            {/* Navigation Buttons */}
-            <button 
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm transition-all focus:outline-none"
-            >
-              <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
-            </button>
-            <button 
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm transition-all focus:outline-none"
-            >
-              <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
-            </button>
+          {/* Navigation */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-all opacity-0 group-hover:opacity-100"
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </button>
+          <button 
+            onClick={nextSlide}
+            className="absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white/10 hover:bg-white/20 text-white backdrop-blur-md transition-all opacity-0 group-hover:opacity-100"
+          >
+            <ChevronRight className="w-8 h-8" />
+          </button>
 
-            {/* Slide Indicators */}
-            <div className="absolute bottom-4 right-6 flex space-x-2">
-              {showcaseImages.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${idx === currentSlide ? 'bg-green-500 w-6 sm:w-8' : 'bg-white/50'}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Featured Events - Full Width */}
-        <div className="mb-8 sm:mb-12 lg:mb-16">
-          {featuredEvents.map((event, index) => (
-            <FeaturedEventCard key={index} event={event} />
-          ))}
-        </div>
-
-        {/* Remaining Events - Responsive Grid */}
-        <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 px-2 text-center">
-            Past Events
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {remainingEvents.map((event, index) => (
-              <GridEventCard key={index} event={event} />
+          {/* Indicators */}
+          <div className="absolute bottom-6 right-10 flex space-x-2">
+            {showcaseImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-green-500 w-8' : 'bg-white/40 w-2'}`}
+              />
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Featured Events */}
+      <div className="mb-20">
+        {featuredEvents.map((event, index) => (
+          <FeaturedEventCard key={index} event={event} />
+        ))}
+      </div>
+
+      {/* Past Events */}
+      <div>
+        <div className="section-heading-container !mb-12">
+           <h2 className="text-3xl font-bold text-gray-900 font-outfit uppercase tracking-wider">Past Events</h2>
+           <div className="w-16 h-1 bg-green-500 mt-2 rounded-full" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {remainingEvents.map((event, index) => (
+            <GridEventCard key={index} event={event} />
+          ))}
         </div>
       </div>
     </div>

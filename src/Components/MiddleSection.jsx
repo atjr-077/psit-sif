@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Target, Lightbulb, Users, BadgeDollarSign } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import itbiBoard from "../assets/itbi_board.png";
 import innovationLogo from "../assets/innovation_cell_logo.png";
 
 const MiddleSection = () => {
-
   const [expandedSection, setExpandedSection] = useState(null);
 
   const highlights = [
-    { icon: <Target className="w-6 h-6 text-black" />, text: <p className='text-black'> Foster Innovation</p> },
-    { icon: <Lightbulb className="w-6 h-6 text-black" />, text: <p className='text-black'>Support Startups </p> },
-    { icon: <Users className="w-6 h-6 text-black" />, text: <p className='text-black'>Build Community</p> },
-    { icon: <BadgeDollarSign className="w-6 h-6 text-black" />, text: <p className='text-black'>Provide Funding</p> }
+    { icon: <Target className="w-6 h-6" />, text: "Foster Innovation" },
+    { icon: <Lightbulb className="w-6 h-6" />, text: "Support Startups" },
+    { icon: <Users className="w-6 h-6" />, text: "Build Community" },
+    { icon: <BadgeDollarSign className="w-6 h-6" />, text: "Provide Funding" }
   ];
 
   const toggleExpand = (section) => {
@@ -32,119 +32,116 @@ const MiddleSection = () => {
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* Left Content Section */}
           <div className="flex-1 space-y-8">
-            <div className="standard-card p-8">
+            <div className="standard-card p-8 bg-gray-50/50">
               {/* Highlights Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                 {highlights.map((item, index) => (
-                  <div key={index} className="flex flex-col items-center justify-center gap-3 bg-gray-50 p-4 rounded-2xl text-green-600 border border-gray-100 font-semibold shadow-sm hover:shadow-md hover:bg-white transition-all transform hover:-translate-y-1">
+                  <div key={index} className="flex flex-col items-center justify-center gap-3 bg-white p-4 rounded-2xl text-green-600 border border-gray-100 shadow-sm transition-all transform hover:-translate-y-1 hover:shadow-md">
                     {item.icon}
-                    <span className="text-sm text-center font-outfit">{item.text}</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-gray-700 text-center font-outfit">{item.text}</span>
                   </div>
                 ))}
               </div>
 
-              <p className="text-gray-600 text-md leading-relaxed font-semibold text-center mt-6">
-                Inclusive TBI is a three years duration initiative supported by the Department of Science & Technology (DST) for educational institutions who are likely to foster innovation and entrepreneurship culture among the students, faculties, entrepreneurs, and nearby communities. It is expected that students, innovators and entrepreneurs will take up innovative ideas/projects and with mentoring support from the academicand startup ecosystem and try to build a startup around the innovative idea/project.The outcome of the i-TBI shall be converting ideas into startups. i-TBI (Inclusive TBI)would also create a culture of innovation & entrepreneurship in the Host Institution (HI)and nearby geographies. i-TBI will be equipped with grants-in-aid funding support to innovators to convert ideas to prototype and prototype to product.
+              <p className="text-gray-600 text-lg leading-relaxed font-medium">
+                Inclusive TBI is a three years duration initiative supported by the Department of Science & Technology (DST) for educational institutions who are likely to foster innovation and entrepreneurship culture among the students, faculties, entrepreneurs, and nearby communities. It is expected that students, innovators and entrepreneurs will take up innovative ideas/projects and with mentoring support from the academic and startup ecosystem and try to build a startup around the innovative idea/project.
               </p>
             </div>
 
             {/* Expandable Sections */}
             <div className="space-y-4">
-              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="standard-card">
                 <div
-                  className="flex justify-between items-center p-6 cursor-pointer"
+                  className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 transition-colors"
                   onClick={() => toggleExpand('criteria')}
                 >
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    Criteria
-                  </h3>
+                  <h3 className="text-xl font-bold font-outfit text-gray-900">Program Criteria</h3>
                   {expandedSection === 'criteria' ? (
                     <ChevronUp className="w-6 h-6 text-green-600" />
                   ) : (
                     <ChevronDown className="w-6 h-6 text-green-600" />
                   )}
                 </div>
-                {expandedSection === 'criteria' && (
-                  <div className="px-6 pb-6">
-                    <div className="bg-green-50 p-4 rounded-lg text-gray-700 text-center">
-                      <p>Individual Innovators or Startups: Open to students, entrepreneurs, and innovators with innovative ideas or prototypes.</p>
-                      <p>Stage of Idea: Should have a well-defined idea or an early-stage prototype with potential for commercialization.</p>
-                      <p>Focus Areas: Ideas should align with societal, technological, or economic challenges and have scalable potential.</p>
-                      <p>Commitment: Applicants must commit to using the i-TBI facilities and mentorship to develop their idea into a startup or product.</p>
-                      <p>Inclusion: Priority may be given to underrepresented groups or regions lacking innovation ecosystems.</p>
-                      <a href="#" className="text-green-600 hover:underline block mt-2">
-                        Learn more →
-                      </a>
-                    </div>
-                  </div>
-                )}
+                <AnimatePresence>
+                  {expandedSection === 'criteria' && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="px-6 pb-6 overflow-hidden"
+                    >
+                      <div className="bg-gray-50 p-6 rounded-xl text-gray-700 space-y-3 border border-gray-100">
+                        <p className="flex items-start gap-2"><span className="text-green-600 font-bold">•</span> Individual Innovators or Startups: Open to students and entrepreneurs with innovative ideas.</p>
+                        <p className="flex items-start gap-2"><span className="text-green-600 font-bold">•</span> Stage of Idea: Should have a well-defined idea or an early-stage prototype.</p>
+                        <p className="flex items-start gap-2"><span className="text-green-600 font-bold">•</span> Focus Areas: Alignment with societal, technological, or economic challenges.</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="standard-card">
                 <div
-                  className="flex justify-between items-center p-6 cursor-pointer"
-                  onClick={() => toggleExpand('testPapers')}
+                  className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                  onClick={() => toggleExpand('vision')}
                 >
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    Vision and Targets
-                  </h3>
-                  {expandedSection === 'testPapers' ? (
+                  <h3 className="text-xl font-bold font-outfit text-gray-900">Vision and Targets</h3>
+                  {expandedSection === 'vision' ? (
                     <ChevronUp className="w-6 h-6 text-green-600" />
                   ) : (
                     <ChevronDown className="w-6 h-6 text-green-600" />
                   )}
                 </div>
-                {expandedSection === 'testPapers' && (
-                  <div className="px-6 pb-6">
-                    <div className="bg-green-50 p-4 rounded-lg text-gray-700 text-center">
-                      <h1 className='font-bold mb-2'>Vision</h1>
-                      <p className="mb-4">To foster a culture of innovation and entrepreneurship by transforming novel ideas into scalable startups, empowering individuals and communities to contribute to India's socio-economic growth.</p>
-                      <h1 className='font-bold mb-2'>Target</h1>
-                      <div className="space-y-1">
-                        <p>- Idea to Startup Conversion: Enable innovators to transform ideas into sustainable startups.</p>
-                        <p>- Ecosystem Development: Establish a robust innovation and entrepreneurship ecosystem within the host institution and nearby regions.</p>
-                        <p>- Inclusivity: Support innovators from diverse backgrounds, ensuring equitable opportunities for all.</p>
-                        <p>- Prototype to Product: Facilitate the journey from prototype development to market-ready products through funding and mentorship.</p>
-                        <p>- Capacity Building: Enhance the entrepreneurial capabilities of students, faculties, and local communities.</p>
+                <AnimatePresence>
+                  {expandedSection === 'vision' && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="px-6 pb-6 overflow-hidden"
+                    >
+                      <div className="bg-gray-50 p-6 rounded-xl text-gray-700 space-y-6 border border-gray-100">
+                        <div>
+                          <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 font-outfit uppercase tracking-wider text-sm">
+                            <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                            Vision
+                          </h4>
+                          <p>To foster a culture of innovation and entrepreneurship by transforming novel ideas into scalable startups, empowering individuals and communities.</p>
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2 font-outfit uppercase tracking-wider text-sm">
+                            <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                            Target
+                          </h4>
+                          <ul className="space-y-2">
+                            <li className="flex items-start gap-2"><span>•</span> Idea to Startup Conversion</li>
+                            <li className="flex items-start gap-2"><span>•</span> Ecosystem Development in Host Institution</li>
+                            <li className="flex items-start gap-2"><span>•</span> Prototype to Product Development support</li>
+                          </ul>
+                        </div>
                       </div>
-                      <a href="#" className="text-green-600 hover:underline block mt-2">
-                        Learn more →
-                      </a>
-                    </div>
-                  </div>
-                )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
 
           {/* Right Image Section */}
-          <div className="lg:w-[400px] ">
-            <div className=" top-8">
-              <div className="card overflow-hidden bg-gradient-to-br from-amber-700 to-amber-900 text-white rounded-xl shadow-xl">
-
-                {/* Content */}
-                <div className="relative z-10 p-6 space-y-6">
-                  <div className="bg-white rounded-lg p-4 shadow-lg transform hover:scale-105 transition-transform">
-                    <img
-                      src={itbiBoard}
-                      alt="DST Inclusive-TBI"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-
-                  <div className="text-center">
-                    <h3 className="text-xl font-semibold mb-2">Start Your Journey</h3>
-                    <p className="text-amber-100 text-sm">Join the innovation ecosystem and transform your ideas into reality</p>
-                  </div>
-                </div>
+          <div className="lg:w-[400px] w-full space-y-8">
+            <div className="standard-card group p-6 bg-gradient-to-br from-green-500 to-green-700 border-none shadow-2xl relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16 blur-2xl" />
+              <div className="bg-white rounded-xl p-4 shadow-inner mb-6 transform group-hover:scale-105 transition-transform duration-500 relative z-10">
+                <img src={itbiBoard} alt="DST Inclusive-TBI" className="w-full h-auto object-contain" />
+              </div>
+              <div className="text-center text-white relative z-10">
+                <h3 className="text-2xl font-bold font-outfit mb-2">Start Your Journey</h3>
+                <p className="text-green-50 opacity-90 text-sm">Join the innovation ecosystem and transform your vision into reality.</p>
               </div>
             </div>
-            <div className="mt-12 w-full h-[300px]">
-              <img
-                src={innovationLogo}
-                alt="Innovation & Entrepreneurship Cell"
-                className="w-full h-full rounded-lg object-contain bg-white p-4 shadow-md"
-              />
+
+            <div className="standard-card p-8 flex items-center justify-center bg-gray-50 hover:bg-white transition-colors duration-500">
+              <img src={innovationLogo} alt="Innovation Cell" className="max-w-[200px] w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-500" />
             </div>
           </div>
         </div>
