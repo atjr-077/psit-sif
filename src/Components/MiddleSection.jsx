@@ -129,25 +129,27 @@ const MiddleSection = () => {
 
           {/* Right Image Section */}
           <div className="lg:w-[400px] w-full space-y-8">
-            <div className="standard-card group p-6 bg-gradient-to-br from-emerald-500 via-green-600 to-green-700 border-none shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16 blur-2xl" />
+            <div className="standard-card group p-6 bg-gradient-to-br from-slate-800 to-slate-950 border-none shadow-2xl relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16 blur-2xl" />
               <div className="bg-white rounded-xl p-4 shadow-inner mb-6 transform group-hover:scale-105 transition-transform duration-500 relative z-10">
                 <img src={itbiBoard} alt="DST Inclusive-TBI" className="w-full h-auto object-contain" />
               </div>
               <div className="text-center text-white relative z-10">
                 <h3 className="text-2xl font-bold font-outfit mb-2">Start Your Journey</h3>
-                <p className="text-green-50 opacity-90 text-sm">Join the innovation ecosystem and transform your vision into reality.</p>
+                <p className="text-slate-300 opacity-90 text-sm italic">Join the innovation ecosystem and transform your vision into reality.</p>
+                <div className="w-12 h-1 bg-green-500 mx-auto mt-4 rounded-full" />
               </div>
             </div>
 
-            <div className="standard-card group p-6 bg-gradient-to-br from-emerald-500 via-green-600 to-green-700 border-none shadow-2xl relative overflow-hidden">
-               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16 blur-2xl" />
+            <div className="standard-card group p-6 bg-gradient-to-br from-slate-800 to-slate-950 border-none shadow-2xl relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16 blur-2xl" />
               <div className="bg-white rounded-xl p-4 shadow-inner mb-6 transform group-hover:scale-105 transition-transform duration-500 relative z-10">
                 <img src={innovationLogo} alt="Innovation Cell" className="w-full h-auto object-contain" />
               </div>
               <div className="text-center text-white relative z-10">
                 <h3 className="text-2xl font-bold font-outfit mb-2">Build Your Future</h3>
-                <p className="text-green-50 opacity-90 text-sm">Empowering tomorrow's entrepreneurs with world-class mentorship and resources.</p>
+                <p className="text-slate-300 opacity-90 text-sm italic">Empowering tomorrow's entrepreneurs with world-class mentorship and resources.</p>
+                <div className="w-12 h-1 bg-green-500 mx-auto mt-4 rounded-full" />
               </div>
             </div>
           </div>
