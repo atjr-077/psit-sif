@@ -25,11 +25,6 @@ const MissionSection = () => {
       description: "A hub for nurturing startup ideas, offering mentorship, funding, and essential resources for growth."
     },
     {
-      image: expo2,
-      title: "Catalyzing the Next Generation of Leaders",
-      description: "Empowering students with knowledge, mentorship, and resources to kickstart their entrepreneurial journey."
-    },
-    {
       image: room,
       title: "Fostering Future Changemakers",
       description: "Dedicated spaces designed to provide early-stage startups with an environment to collaborate and thrive."
