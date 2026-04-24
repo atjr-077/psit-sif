@@ -6,6 +6,7 @@ import expo2 from "../assets/banner/expo2.jpg";
 import gokart from "../assets/banner/gokart.jpg";
 import incub from "../assets/banner/incub.jpg";
 import room from "../assets/banner/room.jpg";
+import innovationAction from "../assets/banner/innovation_action.png";
 
 const MissionSection = () => {
   const slides = [
@@ -13,6 +14,11 @@ const MissionSection = () => {
       image: audi,
       title: "Empowering Innovation and Entrepreneurship",
       description: "Guiding young minds on the path to entrepreneurship through insightful expert talks and discussions."
+    },
+    {
+      image: innovationAction,
+      title: "Innovation in Action",
+      description: "Students collaborating with mentors to bring their startup ideas to life through hands-on development."
     },
     {
       image: expo,
