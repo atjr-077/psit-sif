@@ -20,9 +20,15 @@ const showcaseImages = [
   { url: presentation, title: "Innovation Showcase", description: "Startups presenting ground-breaking solutions to industry experts." }
 ];
 
-const FeaturedEventCard = ({ event }) => {
+const FeaturedEventCard = ({ event, index }) => {
   return (
-    <div className="group standard-card flex flex-col lg:flex-row mb-12">
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+      className="group standard-card flex flex-col lg:flex-row mb-12"
+    >
       <div className="relative w-full lg:w-1/2 overflow-hidden h-80 lg:h-[450px]">
         <img
           src={event.image}
@@ -31,22 +37,28 @@ const FeaturedEventCard = ({ event }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
-      <div className="lg:w-1/2 p-10 flex flex-col justify-center bg-gray-50/50">
+      <div className="lg:w-1/2 p-10 flex flex-col justify-center items-center text-center bg-gray-50/50">
         <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-green-600 transition-colors">
           {event.title}
         </h3>
         <p className="text-gray-600 leading-relaxed text-lg font-medium">
           {event.description}
         </p>
-        <div className="w-16 h-1.5 bg-green-500 mt-8 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+        <div className="w-16 h-1.5 bg-green-500 mt-8 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-const GridEventCard = ({ event }) => {
+const GridEventCard = ({ event, index }) => {
   return (
-    <div className="group standard-card">
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+      className="group standard-card"
+    >
       <div className="relative overflow-hidden h-56">
         <img
           src={event.image}
@@ -55,7 +67,7 @@ const GridEventCard = ({ event }) => {
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500" />
       </div>
-      <div className="p-8">
+      <div className="p-8 flex flex-col items-center text-center">
         <h3 className="font-bold text-xl text-gray-900 mb-4 group-hover:text-green-600 transition-colors">
           {event.title}
         </h3>
@@ -63,7 +75,7 @@ const GridEventCard = ({ event }) => {
           {event.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -81,6 +93,16 @@ const Event = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + showcaseImages.length) % showcaseImages.length);
 
   const events = [
+    {
+      image: presentation,
+      title: 'StartUp Charcha 5.0',
+      description: 'The latest edition of our flagship series brought together prominent investors and founders to discuss fundraising, scaling strategies, and the evolving startup ecosystem.',
+    },
+    {
+      image: elevate26,
+      title: 'StartUp Charcha 4.0',
+      description: 'An interactive session focusing on tech-driven startups, featuring industry leaders sharing their journey from ideation to successful market deployment.',
+    },
     {
       image: img1,
       title: 'StartUp Charcha 3.0',
@@ -188,7 +210,7 @@ const Event = () => {
       {/* Featured Events */}
       <div className="mb-20">
         {featuredEvents.map((event, index) => (
-          <FeaturedEventCard key={index} event={event} />
+          <FeaturedEventCard key={index} event={event} index={index} />
         ))}
       </div>
 
@@ -200,7 +222,7 @@ const Event = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {remainingEvents.map((event, index) => (
-            <GridEventCard key={index} event={event} />
+            <GridEventCard key={index} event={event} index={index} />
           ))}
         </div>
       </div>

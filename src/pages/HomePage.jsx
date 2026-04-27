@@ -12,7 +12,7 @@ import Facilities from "../Components/Facilities";
 
 const HomePage = () => {
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="bg-white dark:bg-[#1a1a1a] overflow-hidden transition-colors duration-300">
       <Navbar />
       <MissionSection />
       <TestimonialSection />

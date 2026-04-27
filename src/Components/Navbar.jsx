@@ -5,11 +5,35 @@ import img from "../assets/th.png";
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      setIsDarkMode(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+      setIsDarkMode(true);
+    }
+  };
 
   const navItems = [
     { title: "Home", route: "/home" },
@@ -27,146 +51,144 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="relative">
-      {/* Header with logos */}
-      <div className="bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50">
+    <div className="relative w-full">
+      {/* 2. Main Institutional Header */}
+      <div className="bg-white dark:bg-[#1a1a1a] border-b border-slate-100 dark:border-transparent py-4 md:py-6 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="py-4 md:py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Left Logos */}
-              <div className="flex items-center space-x-2 md:space-x-6">
-                <div className="w-16 h-16 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <img
-                    src={img6}
-                    alt="Logo 1"
-                    className="w-full h-full object-contain p-1"
-                  />
-                </div>
-                <div className="w-16 h-16 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <img
-                    src={img7}
-                    alt="Logo 2"
-                    className="w-full h-full object-contain p-1"
-                  />
-                </div>
-              </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            {/* Left Partners */}
+            <div className="flex items-center space-x-4 md:space-x-8">
+              <img src={img6} alt="PSIT SIF" className="h-14 md:h-20 lg:h-24 w-auto object-contain" />
+              <div className="h-12 w-px bg-slate-200 hidden md:block" />
+              <img src={img7} alt="DST" className="h-14 md:h-16 lg:h-14 w-auto object-contain" />
+            </div>
 
-              {/* Central Text Content */}
-              <div className="text-center px-2 md:px-4 lg:px-8">
-                <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 tracking-tight">
-                  PSIT STARTUP AND INCUBATION FOUNDATION
-                </h1>
-                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-green-600">
+            {/* Central Title */}
+            <div className="flex flex-col items-center text-center">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-[#e6edf3] tracking-tight leading-tight transition-colors duration-300">
+                PSIT STARTUP AND INCUBATION FOUNDATION
+              </h1>
+              <div className="mt-1 flex flex-col items-center">
+                <span className="text-lg md:text-xl lg:text-2xl font-bold text-green-600 tracking-tighter">
                   DST inclusive-TBI
-                </div>
-                <div className="text-sm md:text-base lg:text-xl font-bold text-black mt-1">
-                  DST i-TBI PSIT SIF,KANPUR (Center for AI/ML and Wearable
-                  Devices)
-                </div>
+                </span>
+                <p className="text-xs md:text-sm font-semibold text-slate-500 dark:text-[#8b949e] uppercase tracking-widest mt-1">
+                  Center for AI/ML and Wearable Devices
+                </p>
               </div>
+            </div>
 
-              {/* Right Logos */}
-              <div className="flex items-center space-x-2 md:space-x-6">
-                <div className="w-16 h-16 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <img
-                    src={img8}
-                    alt="Logo 3"
-                    className="w-full h-full object-contain p-1"
-                  />
-                </div>
-                <div className="w-16 h-16 md:w-24 md:h-24 lg:w-28 lg:h-28">
-                  <img
-                    src={img}
-                    alt="Logo 4"
-                    className="w-full h-full object-contain p-1"
-                  />
-                </div>
-              </div>
+            {/* Right Partners */}
+            <div className="flex items-center space-x-4 md:space-x-8">
+              <img src={img8} alt="PSIT Kanpur" className="h-14 md:h-16 lg:h-20 w-auto object-contain" />
+              <div className="h-12 w-px bg-slate-200 hidden md:block" />
+              <img src={img} alt="DST NIDHI" className="h-12 md:h-16 lg:h-14 w-auto object-contain" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Navigation Bar */}
-      <div
-        className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+      {/* 3. Sticky Navigation */}
+      <nav
+        className={`sticky top-0 w-full z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50 shadow-lg"
-            : "bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50"
+            ? "glass-card py-3 translate-y-0"
+            : "bg-white dark:bg-[#111111] py-4 border-b border-slate-50 dark:border-[#2d2d2d]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            {/* Desktop and Tablet Navigation */}
-            <nav className="hidden md:flex space-x-4 lg:space-x-8">
+          <div className="flex justify-between items-center h-10">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-10">
               {navItems.map((item, index) => (
                 <Link
                   key={index}
                   to={item.route}
-                  className="text-gray-700 hover:text-green-600 text-base lg:text-xl font-medium transition-colors duration-200"
+                  className="nav-link-effect py-2 text-sm lg:text-base font-bold text-slate-600 dark:text-[#8b949e] hover:text-slate-900 dark:hover:text-[#e6edf3] transition-colors"
                 >
                   {item.title}
                 </Link>
               ))}
-            </nav>
+            </div>
 
-            {/* Apply Now Button - Desktop and Tablet */}
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdC7JnM4DRB5AhCctMmgUiCG73-uiDLR8NxbIky6UUOUCC8mA/viewform?vc=0&c=0&w=1&flr=0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center px-4 lg:px-6 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm lg:text-base"
-            >
-              Apply Now
-            </a>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex justify-between items-center w-full">
-              <span className="text-lg font-medium text-gray-700">Menu</span>
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-lg hover:bg-gray-100"
-              >
-                {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-gray-600" />
-                ) : (
-                  <Menu className="w-6 h-6 text-gray-600" />
-                )}
+            {/* CTA Button & Theme Toggle */}
+            <div className="hidden md:flex items-center gap-4">
+              <button onClick={toggleTheme} className="p-2 rounded-full text-slate-500 hover:bg-slate-100 dark:text-[#8b949e] dark:hover:bg-[#21262d] transition-colors">
+                {isDarkMode ? <Sun className="w-5 h-5 transition-transform duration-300 ease-in-out hover:rotate-90" /> : <Moon className="w-5 h-5 transition-transform duration-300 ease-in-out hover:-rotate-12" />}
               </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdC7JnM4DRB5AhCctMmgUiCG73-uiDLR8NxbIky6UUOUCC8mA/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary group ripple"
+              >
+                Apply for Incubation
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+
+            {/* Mobile Menu Actions */}
+            <div className="md:hidden flex justify-between items-center w-full">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                <span className="text-sm font-bold text-slate-900 dark:text-[#e6edf3] uppercase">Menu</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <button onClick={toggleTheme} className="p-2 rounded-full text-slate-500 hover:bg-slate-100 dark:text-[#8b949e] dark:hover:bg-[#21262d] transition-colors">
+                  {isDarkMode ? <Sun className="w-5 h-5 transition-transform duration-300 ease-in-out hover:rotate-90" /> : <Moon className="w-5 h-5 transition-transform duration-300 ease-in-out hover:-rotate-12" />}
+                </button>
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="p-2 transition-colors hover:bg-slate-100 dark:hover:bg-[#21262d] rounded-xl"
+                >
+                  {isMobileMenuOpen ? (
+                    <X className="w-6 h-6 text-slate-900 dark:text-[#e6edf3]" />
+                  ) : (
+                    <Menu className="w-6 h-6 text-slate-900 dark:text-[#e6edf3]" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="max-w-7xl mx-auto px-4 py-2">
-              <div className="flex flex-col space-y-2">
+        {/* Mobile Navigation Menu Overlay */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#111111] border-t border-slate-100 dark:border-[#2d2d2d] shadow-2xl p-6 space-y-4"
+            >
+              <div className="flex flex-col space-y-1">
                 {navItems.map((item, index) => (
                   <Link
                     key={index}
                     to={item.route}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="py-2 px-4 text-gray-700 hover:bg-gray-50 rounded-lg font-medium text-left"
+                    className="flex justify-between items-center py-4 px-4 text-slate-700 dark:text-[#8b949e] hover:bg-slate-50 dark:hover:bg-[#21262d] hover:text-green-600 dark:hover:text-green-500 rounded-2xl font-bold transition-all"
                   >
                     {item.title}
+                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100" />
                   </Link>
                 ))}
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdC7JnM4DRB5AhCctMmgUiCG73-uiDLR8NxbIky6UUOUCC8mA/viewform?vc=0&c=0&w=1&flr=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-2 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200 mt-2"
-                >
-                  Apply Now
-                </a>
+                <div className="pt-4 border-t border-slate-100 dark:border-[#2d2d2d]">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdC7JnM4DRB5AhCctMmgUiCG73-uiDLR8NxbIky6UUOUCC8mA/viewform"
+                    className="flex items-center justify-center w-full py-4 bg-green-600 text-white font-bold rounded-2xl shadow-lg shadow-green-500/30 active:scale-[0.98] transition-transform"
+                  >
+                    Apply Now
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        )}
-      </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
     </div>
   );
 };
 
 export default Navbar;
+

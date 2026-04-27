@@ -71,7 +71,7 @@ const FacilityCard = ({ facility }) => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
 
             {/* Content Container */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col justify-end h-full">
+            <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col justify-end items-center text-center h-full">
                 <h3 className="text-2xl font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">
                     {facility.title}
                 </h3>
@@ -82,7 +82,7 @@ const FacilityCard = ({ facility }) => {
                 </div>
                 
                 {/* Decorative bar */}
-                <div className="w-12 h-1 bg-green-500 mt-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-200" />
+                <div className="w-12 h-1 bg-green-500 mt-4 transform origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-200" />
             </div>
 
             {/* Pagination dots for multi-image cards */}
