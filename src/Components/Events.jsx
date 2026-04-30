@@ -13,6 +13,13 @@ import elevate26 from "../assets/banner/audi.jpg"
 import drone from "../assets/events/drone.jpg"
 import presentation from "../assets/events/presentation.jpg"
 
+// Official Event Posters
+import startupCharcha5 from "../assets/events/startup_charcha_5.jpg"
+import startupCharcha4 from "../assets/events/startup_charcha_4.jpg"
+import startupCharcha3 from "../assets/events/startup_charcha_3.jpg"
+import startupCharcha2 from "../assets/events/startup_charcha_2.jpg"
+import hustlersNew from "../assets/events/hustlers_new.png"
+
 const showcaseImages = [
   { url: elevate26, title: "ELEVATE '26 Startup Conclave", description: "Bringing together visionaries and investors to shape the future of innovation." },
   { url: img7, title: "Intellectual Property Rights Workshop", description: "Empowering innovators with knowledge of legal protections and patent filing." },
@@ -29,13 +36,15 @@ const FeaturedEventCard = ({ event, index }) => {
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
       className="group standard-card flex flex-col lg:flex-row mb-12"
     >
-      <div className="relative w-full lg:w-1/2 overflow-hidden h-80 lg:h-[450px]">
+      <div className="relative w-full lg:w-1/2 h-80 lg:h-[450px] image-container rounded-l-3xl lg:rounded-r-none overflow-hidden bg-slate-900">
+
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="relative z-10 w-full h-full object-contain transition-transform duration-[400ms] ease-out group-hover:scale-[1.03]"
+          loading="lazy"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
       </div>
       <div className="lg:w-1/2 p-10 flex flex-col justify-center items-center text-center bg-gray-50/50">
         <h3 className="text-3xl font-bold text-gray-900 mb-6 group-hover:text-green-600 transition-colors">
@@ -59,13 +68,15 @@ const GridEventCard = ({ event, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
       className="group standard-card"
     >
-      <div className="relative overflow-hidden h-56">
+      <div className="relative h-56 w-full image-container rounded-t-3xl rounded-b-none overflow-hidden bg-slate-900">
+
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="relative z-10 w-full h-full object-contain transition-transform duration-[400ms] ease-out group-hover:scale-[1.03]"
+          loading="lazy"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all duration-500" />
       </div>
       <div className="p-8 flex flex-col items-center text-center">
         <h3 className="font-bold text-xl text-gray-900 mb-4 group-hover:text-green-600 transition-colors">
@@ -94,17 +105,17 @@ const Event = () => {
 
   const events = [
     {
-      image: presentation,
+      image: startupCharcha5,
       title: 'StartUp Charcha 5.0',
       description: 'The latest edition of our flagship series brought together prominent investors and founders to discuss fundraising, scaling strategies, and the evolving startup ecosystem.',
     },
     {
-      image: elevate26,
+      image: startupCharcha4,
       title: 'StartUp Charcha 4.0',
       description: 'An interactive session focusing on tech-driven startups, featuring industry leaders sharing their journey from ideation to successful market deployment.',
     },
     {
-      image: img1,
+      image: startupCharcha3,
       title: 'StartUp Charcha 3.0',
       description: 'STARTUP CHARCHA 3.0, an exclusive talk show with Mr. Nitin Sharma, Founder of ROAD PILOT, as our esteemed chief guest. The engaging session ignited entrepreneurial spirits and sparked meaningful innovation discussions.',
     },
@@ -119,12 +130,12 @@ const Event = () => {
       description: 'Organized under the NIDHI ITBI initiative, providing a dynamic platform for innovators to showcase prototypes and pitch ground-breaking ideas to the ecosystem.',
     },
     {
-      image: img5,
+      image: hustlersNew,
       title: 'Hustlers',
       description: 'Engaging mentors from the industry to inspire first-year engineering students to think big and embrace the startup mindset from day one.',
     },
     {
-      image: img6,
+      image: startupCharcha2,
       title: 'StartUp Charcha 2.0',
       description: 'Featuring deep-dive conversations with successful founders like Mr. Shivendra Gupta, sharing real-world insights on scaling and market entry strategies.',
     }
@@ -142,7 +153,7 @@ const Event = () => {
 
       {/* Showcase Carousel */}
       <div className="mb-20 relative group">
-        <div className="relative w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+        <div className="relative w-full h-[400px] md:h-[600px] rounded-3xl shadow-2xl image-container">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -156,6 +167,8 @@ const Event = () => {
                 src={showcaseImages[currentSlide].url}
                 alt={showcaseImages[currentSlide].title}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end justify-center pb-16">
                 <div className="px-10 text-white text-center max-w-4xl">

@@ -9,28 +9,29 @@ import gokart from "../assets/banner/gokart.jpg";
 import incub from "../assets/banner/incub.jpg";
 import room from "../assets/banner/room.jpg";
 import innovationAction from "../assets/banner/innovation_action.png";
+import receptionReal from "../assets/facilities/receptionReal.png";
 
 const MissionSection = () => {
   const slides = [
     {
-      image: audi,
-      title: "Empowering Innovation and Entrepreneurship",
-      description: "Guiding young minds on the path to success through insightful expert mentorship and global perspectives."
+      image: receptionReal,
+      title: "World-Class Incubation Infrastructure",
+      description: "Step into a premium ecosystem designed to nurture the next generation of global innovators and entrepreneurs."
     },
     {
-      image: room,
+      image: innovationAction,
       title: "Innovation in Action",
       description: "Collaborative environments where student-led startups transform visionary ideas into functional prototypes."
     },
     {
-      image: expo,
-      title: "Shaping the Future of Technology",
-      description: "A convergence of bright minds and industry leaders steering the next generation of technological excellence."
+      image: room,
+      title: "Vibrant Ecosystem",
+      description: "Nurturing breakthrough ideas with world-class resources and specialized technical mentorship."
     },
     {
-      image: incub,
-      title: "Nurturing Exceptional Talent",
-      description: "A premier hub offering comprehensive mentorship, seed funding, and world-class resources for growth."
+      image: gokart,
+      title: "Pushing Technical Boundaries",
+      description: "Fostering hands-on engineering excellence and a competitive spirit through high-impact technical projects."
     }
   ];
 
@@ -55,7 +56,7 @@ const MissionSection = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full image-container !border-0 !rounded-none !shadow-none"
         >
           {/* Background Image with Ken Burns effect */}
           <motion.img
@@ -63,9 +64,14 @@ const MissionSection = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 6 }}
             src={slides[currentIndex].image}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover hero-image"
             alt={slides[currentIndex].title}
+            fetchpriority="high"
+            decoding="async"
           />
+
+          {/* New Stacked Hero Vignette Overlay */}
+          <div className="absolute inset-0 hero-vignette z-10 pointer-events-none" />
 
           {/* Polished Dark Overlay Gradient: Left-weighted */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/60 to-slate-950/90 dark:!bg-none dark:[background-image:linear-gradient(to_right,rgba(0,0,0,0.75)_40%,rgba(0,0,0,0.35)_100%)] z-10" />

@@ -189,9 +189,14 @@ const MiddleSection = () => {
                 whileHover={{ y: -5 }}
                 className="standard-card group relative bg-white dark:bg-[#21262d] border-slate-100 dark:border-[#30363d] flex flex-col shadow-[0_2px_12px_rgba(0,0,0,0.08)] dark:shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
               >
-                <div className={`w-full h-[220px] overflow-hidden relative ${banner.boldBg ? 'bg-[#111111]' : 'bg-white dark:bg-[#21262d]'}`}>
-                  <div className={`absolute inset-0 z-10 transition-colors ${banner.boldBg ? 'bg-black/50 group-hover:bg-black/60' : 'bg-black/10 group-hover:bg-black/20'}`} />
-                  <img src={banner.img} alt={banner.title} className={`w-full h-full object-center transform transition-transform duration-700 ${banner.boldBg ? 'object-contain scale-100 group-hover:scale-105' : 'object-cover scale-[1.08] group-hover:scale-[1.12]'}`} />
+                <div className={`w-full h-[220px] image-container relative ${banner.boldBg ? 'bg-[#111111]' : 'bg-white dark:bg-[#21262d]'}`}>
+                  <img 
+                    src={banner.img} 
+                    alt={banner.title} 
+                    className={`w-full h-full object-center transition-transform duration-[400ms] ease-out ${banner.boldBg ? 'object-contain scale-100 group-hover:scale-[1.03]' : 'object-cover scale-[1.08] group-hover:scale-[1.11]'}`} 
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold font-outfit mb-3 text-slate-900 dark:text-[#e6edf3] border-l-[1px] border-green-600 pl-3">{banner.title}</h3>

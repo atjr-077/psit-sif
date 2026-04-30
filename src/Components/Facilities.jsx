@@ -16,25 +16,47 @@ import startup3 from '../assets/facilities/startup3.png';
 import workstation from '../assets/facilities/workstation.png';
 import cnc from '../assets/facilities/cnc.png';
 import printer3d from '../assets/facilities/3dprinter.png';
-import labTable from '../assets/facilities/lab_table.jpg';
+
 import cuttingEdgeResearch from '../assets/facilities/cutting_edge_research.jpg';
+
+// New Real Gallery Images
+import facilityDesk1 from '../assets/facilities/facility_desk1.jpg';
+import facilityDesk2 from '../assets/facilities/facility_desk2.jpg';
+import facilityTeamwork from '../assets/facilities/facility_teamwork.jpg';
+import facilityLabPc from '../assets/facilities/facility_lab_pc.jpg';
+import facilityMeeting from '../assets/facilities/facility_meeting.jpg';
+
+// Newly added real photos
+import teamworkTable from '../assets/facilities/teamworkTable.png';
+import printer3dReal from '../assets/facilities/printer3dReal.png';
+import labBenchReal from '../assets/facilities/labBenchReal.png';
+import conferenceTableWide from '../assets/facilities/conferenceTableWide.png';
 
 const facilities = [
     {
         title: "Startup Room",
         description: "A dedicated space for budding entrepreneurs to brainstorm and develop their ideas.",
-        images: [startup1, startup2, startup3]
+        images: [teamworkTable, facilityDesk1, facilityDesk2, startup1]
     },
-    { title: "Cutting-edge Research Space", description: "Equipped with modern tools and technologies for advanced research and development.", image: cuttingEdgeResearch },
-    { title: "Group Discussion Room", description: "A collaborative space designed for team meetings and brainstorming sessions.", image: discussionRoom },
+    { 
+        title: "Cutting-edge Research Space", 
+        description: "Equipped with modern tools and technologies for advanced research and development.", 
+        images: [labBenchReal, facilityLabPc, cuttingEdgeResearch] 
+    },
+    { title: "Group Discussion Room", description: "A collaborative space designed for team meetings and brainstorming sessions.", image: conferenceTableWide },
     { title: "Library", description: "A vast collection of books, research papers, and digital resources for academic enrichment.", image: library },
     { title: "Conference Hall", description: "Spacious hall for seminars, guest lectures, and industry interactions.", image: startupRoom },
-    { title: "Computer Lab", description: "State-of-the-art systems for programming, simulations, and research.", image: workstation }
+    { 
+        title: "Computer Lab", 
+        description: "State-of-the-art systems for programming, simulations, and research.", 
+        images: [facilityTeamwork, workstation] 
+    }
 ];
 
 const workstationSlides = [
     { image: workstation, title: "Modern Workstations", description: "Equipped with high-performance systems for intensive development and design work." },
-    { image: labTable, title: "Electronics Design Lab", description: "Advanced testing and prototyping tools for electronics and hardware development." },
+    { image: facilityLabPc, title: "R&D Computing", description: "Specialized computing resources for simulation, modeling, and deep-tech research." },
+    { image: printer3dReal, title: "3D Prototyping Lab", description: "Industrial-grade 3D printing facilities for rapid product development." },
     { image: cnc, title: "CNC Prototyping", description: "Precision machining facilities for creating high-quality physical prototypes." }
 ];
 
@@ -53,36 +75,40 @@ const FacilityCard = ({ facility }) => {
     const displayImage = hasMultipleImages ? facility.images[imgIndex] : facility.image;
 
     return (
-        <div className="group relative rounded-2xl overflow-hidden shadow-xl transform hover:-translate-y-2 transition-all duration-500 h-[320px] cursor-pointer">
+        <div className="group image-container w-full h-[320px] cursor-pointer">
             <AnimatePresence mode="wait">
                 <motion.img
                     key={imgIndex}
                     src={displayImage}
                     alt={facility.title}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.05 }}
-                    transition={{ duration: 0.6 }}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 absolute inset-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.03] absolute inset-0"
+                    loading="lazy"
+                    decoding="async"
                 />
             </AnimatePresence>
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
+            {/* Bottom Shadow for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
 
             {/* Content Container */}
             <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col justify-end items-center text-center h-full">
-                <h3 className="text-2xl font-bold text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">
-                    {facility.title}
-                </h3>
-                <div className="overflow-hidden">
-                    <p className="text-sm text-gray-100 opacity-0 group-hover:opacity-100 translate-y-8 group-hover:translate-y-0 transition-all duration-500 delay-100 leading-relaxed font-medium">
-                        {facility.description}
-                    </p>
+                <div className="p-4 rounded-xl flex flex-col items-center w-full mt-auto">
+                    <h3 className="text-2xl font-bold text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 drop-shadow-md">
+                        {facility.title}
+                    </h3>
+                    <div className="overflow-hidden">
+                        <p className="text-sm text-gray-100 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100 leading-relaxed font-medium">
+                            {facility.description}
+                        </p>
+                    </div>
+                    
+                    {/* Decorative bar */}
+                    <div className="w-12 h-1 bg-green-500 mt-4 transform origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-200" />
                 </div>
-                
-                {/* Decorative bar */}
-                <div className="w-12 h-1 bg-green-500 mt-4 transform origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-200" />
             </div>
 
             {/* Pagination dots for multi-image cards */}
@@ -132,7 +158,7 @@ const Facilities = () => {
                         </p>
                     </div>
 
-                    <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl group">
+                    <div className="relative h-[600px] w-full rounded-2xl shadow-2xl group image-container">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentIndex}
@@ -145,7 +171,9 @@ const Facilities = () => {
                                 <img
                                     src={workstationSlides[currentIndex].image}
                                     alt={workstationSlides[currentIndex].title}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.03]"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end">
                                     <div className="p-8 md:p-12 text-white max-w-3xl">
