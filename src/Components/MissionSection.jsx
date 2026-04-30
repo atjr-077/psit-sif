@@ -10,7 +10,6 @@ import incub from "../assets/banner/incub.jpg";
 import room from "../assets/banner/room.jpg";
 import innovationAction from "../assets/banner/innovation_action.png";
 import receptionReal from "../assets/facilities/receptionReal.png";
-import printer3dReal from "../assets/facilities/printer3dReal.png";
 
 const MissionSection = () => {
   const slides = [
@@ -28,11 +27,6 @@ const MissionSection = () => {
       image: room,
       title: "Vibrant Ecosystem",
       description: "Nurturing breakthrough ideas with world-class resources and specialized technical mentorship."
-    },
-    {
-      image: printer3dReal,
-      title: "Pushing Technical Boundaries",
-      description: "Industrial-grade rapid prototyping facilities to transform digital designs into physical realities."
     }
   ];
 
