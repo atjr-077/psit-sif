@@ -10,6 +10,7 @@ import incub from "../assets/banner/incub.jpg";
 import room from "../assets/banner/room.jpg";
 import innovationAction from "../assets/banner/innovation_action.png";
 import receptionReal from "../assets/facilities/receptionReal.png";
+import labBenchReal from "../assets/facilities/labBenchReal.png";
 
 const MissionSection = () => {
   const slides = [
@@ -29,7 +30,7 @@ const MissionSection = () => {
       description: "Nurturing breakthrough ideas with world-class resources and specialized technical mentorship."
     },
     {
-      image: gokart,
+      image: labBenchReal,
       title: "Pushing Technical Boundaries",
       description: "Fostering hands-on engineering excellence and a competitive spirit through high-impact technical projects."
     }
